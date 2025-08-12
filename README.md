@@ -1,39 +1,36 @@
-# Portfolio de Lucas Calvo Coltro
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-¡Bienvenido a mi portfolio profesional!  
-Soy Técnico Universitario en Programación y estudiante de Ingeniería en Sistemas, apasionado por el desarrollo de software, la tecnología y la innovación.
+## Getting Started
 
----
+First, run the development server:
 
-## Sobre mí
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-Actualmente me especializo en [tu área o lenguaje favorito, por ejemplo: desarrollo web, backend con Python, etc.].  
-Me gusta aprender nuevas tecnologías y trabajar en proyectos que aporten valor.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
----
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-## Proyectos Destacados
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-- Proyecto 1 - breve descripción y tecnologías usadas.
-- Proyecto 2 - breve descripción y tecnologías usadas.
-- Proyecto 3 - breve descripción y tecnologías usadas.
+## Learn More
 
+To learn more about Next.js, take a look at the following resources:
 
----
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-## Contacto
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-Puedes encontrarme en:
+## Deploy on Vercel
 
-- [LinkedIn](https://www.linkedin.com/in/lucas-calvo-coltro/)  
-- [GitHub](https://github.com/calvoclucas)
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
----
-
-Gracias por visitar mi portfolio. ¡Estoy abierto a nuevas oportunidades y colaboraciones!
-
----
-
-*Lucas Calvo Coltro*  
-*Técnico Universitario en Programación*  
-*Estudiante de Ingeniería en Sistemas*  
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
