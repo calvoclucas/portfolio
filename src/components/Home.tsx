@@ -28,8 +28,8 @@ export default function Home() {
             Hire Me
           </button>
           <a
-            href="/cv.pdf"
-            download="LucasCalvoColtro_CV.pdf"
+            href="/CV_Lucas Calvo Coltro.pdf"
+            download="CV_Lucas Calvo Coltro.pdf"
             className="border border-blue-600 text-blue-600 px-6 py-2 rounded-lg hover:bg-blue-600 hover:text-white transition-colors inline-block text-center"
             aria-label="Download CV"
           >
