@@ -2,7 +2,7 @@ import React from "react";
 import "./globals.css";
 import Navbar from "../components/Navbar";
 import Home from "../components/Home";
-
+import About from "@/components/About";
 
 export const metadata = {
   title: "Portfolio - Lucas Calvo Coltro",
@@ -25,6 +25,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <body>
         <Navbar />
         <Home/>
+        <About/>
         <main className="pt-20">{children}</main>
       </body>
     </html>
