@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "../components/Navbar";
 import Home from "../components/Home";
 import About from "@/components/About";
+import Services from "@/components/Services";
 
 export const metadata = {
   title: "Portfolio - Lucas Calvo Coltro",
@@ -24,8 +25,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
       </head>
       <body>
         <Navbar />
-        <Home/>
-        <About/>
+        <Home />
+        <About />
+        <Services />
         <main className="pt-20">{children}</main>
       </body>
     </html>

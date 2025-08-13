@@ -23,7 +23,7 @@ export default function About() {
       <div className="w-full max-w-[1440px] mx-auto flex flex-col items-start gap-6">
         {/* Botón */}
         <button className="bg-purple-600 text-white px-4 py-2 text-sm rounded-full hover:bg-purple-700 transition flex items-center gap-2">
-          <FaCircleInfo size={16} /> Sobre mí
+          <FaCircleInfo size={16} /> SOBRE M&Iacute;
         </button>
 
         <div className="w-full">
