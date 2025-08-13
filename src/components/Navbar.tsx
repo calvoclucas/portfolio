@@ -7,15 +7,15 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const menuItems = [
-  { href: "#inicio", label: "Inicio" },
-  { href: "#about", label: "Sobre mí" },
-  { href: "#services", label: "Servicios" },
-  { href: "#projects", label: "Proyectos" },
-  { href: "#contact", label: "Contacto" },
-];
+    { href: "#inicio", label: "Inicio" },
+    { href: "#about", label: "Sobre mí" },
+    { href: "#services", label: "Servicios" },
+    { href: "#projects", label: "Proyectos" },
+    { href: "#contact", label: "Contacto" },
+  ];
 
   return (
-    <nav className="bg-[rgb(5,12,23)] fixed top-0 left-0 right-0 z-50 px-6 py-4 flex justify-between items-center text-white">
+    <nav className="bg-[rgb(5,12,23)] fixed top-0 left-0 right-0 z-50 px-6 py-2 flex justify-between items-center text-white">
       {/* Logo */}
       <div className="flex items-center ml-34">
         <Link href="/">
