@@ -11,7 +11,7 @@ import {
   FaBook,
   FaGlobe,
   FaLinkedin,
-  FaLaptopCode,
+  FaLaptopCode,FaChartPie
 } from "react-icons/fa";
 import {
   SiPython,
@@ -26,7 +26,7 @@ import {
   SiNextdotjs,
   SiExpress,
   SiJquery,
-  SiPhp,
+  SiPhp,SiDotnet, SiPostman, SiLiquibase,SiGitforwindows
 } from "react-icons/si";
 
 export default function Services() {
@@ -107,24 +107,65 @@ export default function Services() {
           </div>
 
           {/* Graphic Design */}
-          <div className="border border-white/20  p-6 rounded-xl shadow hover:shadow-lg transition">
-            <h3 className="text-2xl text-white  font-bold mb-2">
-              Desarrollo Desktop Apps
-            </h3>
-            <p className="text-gray-400 mb-4">
-              Experiencia con C#, .NET, WPF y Windows Forms para construir
-              aplicaciones de escritorio profesionales, robustas y fáciles de
-              usar.
-            </p>
-            <div className="flex flex-col items-center gap-1 text-blue-500">
-              <SiPhp className="text-5xl" />
-              <span className="text-sm">PHP</span>
-            </div>
-            <div className="flex flex-col items-center gap-1 text-blue-500">
-              <SiJquery className="text-5xl" />
-              <span className="text-sm">jQuery</span>
-            </div>
-          </div>
+        <div className="border border-white/20 p-6 rounded-xl shadow hover:shadow-lg transition">
+  <h3 className="text-2xl text-white font-bold mb-2">
+    Desarrollo Desktop Apps
+  </h3>
+  <p className="text-gray-400 mb-4">
+    Experiencia con C#, .NET, WPF y Windows Forms para construir
+    aplicaciones de escritorio profesionales, robustas y fáciles de
+    usar.
+  </p>
+
+  {/* Contenedor que ajusta íconos automáticamente */}
+  <div className="mt-12 flex flex-wrap gap-6">
+    <div className="flex flex-col items-center gap-1 text-blue-500">
+      <SiDotnet className="text-5xl" />
+      <span className="text-sm">.NET</span>
+    </div>
+
+    <div className="flex flex-col items-center gap-1 text-blue-500">
+      <SiPostman className="text-5xl" />
+      <span className="text-sm">PostMan</span>
+    </div>
+
+    <div className="flex flex-col items-center gap-1 text-blue-500">
+      <SiLiquibase className="text-5xl" />
+      <span className="text-sm">LiquidBase</span>
+    </div>
+
+    <div className="flex flex-col items-center gap-1 text-blue-500">
+      <img
+        src="/sql-server.png"
+        alt="SQL Server"
+        className="w-20 h-20"
+        style={{
+          filter:
+            "invert(30%) sepia(100%) saturate(500%) hue-rotate(180deg)",
+        }}
+      />
+    </div>
+
+
+      <div className="flex flex-col items-center gap-1 text-blue-500">
+      <SiGitforwindows className="text-5xl" />
+      <span className="text-sm">Git</span>
+    </div>
+        <div className="flex flex-col items-center gap-1 text-blue-500">
+      <img
+        src="/c-sharp.png"
+        alt="C#"
+        className="w-12 h-12"
+        style={{
+          filter:
+            "invert(30%) sepia(100%) saturate(500%) hue-rotate(180deg)",
+        }}
+      />
+      <span className="text-sm">C#</span>
+    </div>
+  </div>
+</div>
+
 
           {/* Motion Design */}
           <div className="border border-white/20  p-6 rounded-xl shadow hover:shadow-lg transition">
@@ -136,10 +177,10 @@ export default function Services() {
               identificando requerimientos, optimizando procesos y asegurando
               que los sistemas cumplan con las necesidades del negocio.
             </p>
-            <div className="flex flex-col items-center gap-1 text-blue-500">
-              <SiPhp className="text-5xl" />
-              <span className="text-sm">PHP</span>
-            </div>
+ <div className="flex flex-col items-center gap-1 text-blue-500">
+  <FaChartPie className="text-5xl" />
+  <span className="text-sm">Reportes</span>
+</div>
             <div className="flex flex-col items-center gap-1 text-blue-500">
               <SiJquery className="text-5xl" />
               <span className="text-sm">jQuery</span>
