@@ -39,11 +39,11 @@ export default function Services() {
         </button>
         <div className="mt-12 grid md:grid-cols-3 gap-8">
           {/* Desarrollo Web */}
-          <div className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-            <h3 className="text-2xl text-black font-bold mb-2">
+          <div className="bg-dark border border-white/20 p-6 rounded-xl shadow hover:shadow-lg transition">
+            <h3 className="text-2xl text-white font-bold mb-2">
               Desarrollo Web FullStack
             </h3>
-            <p className="text-gray-600 mb-4">
+            <p className="text-gray-400 mb-4">
               Desarrollo aplicaciones web modernas y funcionales, optimizadas
               para usuarios y negocios. Me especializo en crear interfaces
               atractivas, integraciones con APIs y soluciones escalables para
@@ -107,34 +107,42 @@ export default function Services() {
           </div>
 
           {/* Graphic Design */}
-          <div className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-            <h3 className="text-2xl text-black  font-bold mb-2">
+          <div className="border border-white/20  p-6 rounded-xl shadow hover:shadow-lg transition">
+            <h3 className="text-2xl text-white  font-bold mb-2">
               Desarrollo Desktop Apps
             </h3>
-            <p className="text-gray-600 mb-4">
+            <p className="text-gray-400 mb-4">
               Experiencia con C#, .NET, WPF y Windows Forms para construir
               aplicaciones de escritorio profesionales, robustas y fáciles de
               usar.
             </p>
-            <div className="flex gap-4 text-3xl text-green-600">
-              <SiPython title="Python" />
-              <SiPython title="C#" />
+            <div className="flex flex-col items-center gap-1 text-blue-500">
+              <SiPhp className="text-5xl" />
+              <span className="text-sm">PHP</span>
+            </div>
+            <div className="flex flex-col items-center gap-1 text-blue-500">
+              <SiJquery className="text-5xl" />
+              <span className="text-sm">jQuery</span>
             </div>
           </div>
 
           {/* Motion Design */}
-          <div className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-            <h3 className="text-2xl text-black  font-bold mb-2">
+          <div className="border border-white/20  p-6 rounded-xl shadow hover:shadow-lg transition">
+            <h3 className="text-2xl text-white  font-bold mb-2">
               An&aacute;lisis Funcional
             </h3>
-            <p className="text-gray-600 mb-4">
+            <p className="text-gray-400 mb-4">
               Especializado en análisis funcional para el sector bancario,
               identificando requerimientos, optimizando procesos y asegurando
               que los sistemas cumplan con las necesidades del negocio.
             </p>
-            <div className="flex gap-4 text-3xl text-blue-600">
-              <SiPython title="SQL Server" />
-              <SiPython title="Node.js" />
+            <div className="flex flex-col items-center gap-1 text-blue-500">
+              <SiPhp className="text-5xl" />
+              <span className="text-sm">PHP</span>
+            </div>
+            <div className="flex flex-col items-center gap-1 text-blue-500">
+              <SiJquery className="text-5xl" />
+              <span className="text-sm">jQuery</span>
             </div>
           </div>
         </div>
