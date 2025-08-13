@@ -1,13 +1,15 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+content: [
+  "./src/**/*.{js,ts,jsx,tsx}",
+  "./components/**/*.{js,ts,jsx,tsx}", // si tienes carpeta components fuera de src
+  "./pages/**/*.{js,ts,jsx,tsx}",      // si usas Next.js
+],
   theme: {
     extend: {
       colors: {
         dark: "rgb(5 12 23)",
-        "custom-yellow": "rgb(208 212 55)"
+       "custom-yellow": "rgb(208, 212, 55)"
       },
     },
   },
