@@ -119,9 +119,10 @@ export default function Experience() {
     },
   ];
 
-  const renderTimeline = (items: TimelineItem[], icon: React.ReactNode) =>
+  const renderTimeline = (items: TimelineItem[], Icon: React.ElementType) =>
     items.map((item, index) => {
       const isLeft = index % 2 === 0;
+
       return (
         <div key={index} className="relative w-full flex justify-center mb-12">
           {/* Línea central */}
@@ -132,7 +133,15 @@ export default function Experience() {
               isLeft ? "md:mr-auto md:text-left" : "md:ml-auto md:text-right"
             }`}
           >
-            <div className="mb-2">{icon}</div>
+            {/* Icono */}
+            <div
+              className={`flex mb-2 justify-center md:justify-${
+                isLeft ? "start" : "end"
+              }`}
+            >
+              <Icon className="text-black text-3xl" />
+            </div>
+
             <span className="text-yellow-500 font-bold">{item.period}</span>
             <h3 className="text-lg font-semibold text-black mt-1">
               {item.title}
@@ -180,19 +189,13 @@ export default function Experience() {
         <h2 className="text-2xl md:text-4xl text-gray-800 font-bold mt-20 mb-20 flex justify-center items-center gap-2">
           <FaBriefcase className="text-3xl" /> Experiencia
         </h2>
-        {renderTimeline(
-          experience,
-          <FaLaptop className="text-black text-3xl" />
-        )}
+        {renderTimeline(experience, FaLaptop)}
 
         {/* Educación */}
         <h2 className="text-2xl md:text-4xl text-gray-800 font-bold mt-20 mb-20 flex justify-center items-center gap-2">
           <FaGraduationCap /> Educación
         </h2>
-        {renderTimeline(
-          education,
-          <PiStudent className="text-black text-3xl" />
-        )}
+        {renderTimeline(education, PiStudent)}
 
         {/* Certificaciones */}
         <h2 className="text-2xl md:text-4xl text-gray-800 font-bold mt-20 mb-20 flex flex-wrap justify-center items-center gap-2">
