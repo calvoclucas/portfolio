@@ -15,7 +15,7 @@ export default function Footer() {
             <FaClock className="text-yellow-300" />
             <h3 className="font-bold text-lg">Horario</h3>
           </div>
-          <p>Lun-Vie de 8am a 5pm</p>
+          <p className="text-gray-200">Lun-Vie de 8am a 5pm</p>
         </div>
 
         {/* Teléfono */}
@@ -24,7 +24,7 @@ export default function Footer() {
             <FaPhoneAlt className="text-yellow-300" />
             <h3 className="font-bold text-lg">Teléfono</h3>
           </div>
-          <p>+54 (336) 403-4400</p>
+          <p className="text-gray-200">+54 (336) 403-4400</p>
         </div>
 
         {/* Email */}
@@ -33,7 +33,7 @@ export default function Footer() {
             <FaEnvelope className="text-yellow-300" />
             <h3 className="font-bold text-lg">Email</h3>
           </div>
-          <p>calvoclucas@gmail.com</p>
+          <p className="text-gray-200">calvoclucas@gmail.com</p>
         </div>
 
         {/* Dirección */}
@@ -42,13 +42,13 @@ export default function Footer() {
             <FaMapMarkerAlt className="text-yellow-300" />
             <h3 className="font-bold text-lg">Dirección</h3>
           </div>
-          <p>Rosario, Santa Fe, Argentina</p>
+          <p className="text-gray-200">Rosario, Santa Fe, Argentina</p>
         </div>
       </div>
 
       {/* Copy */}
       <div className="border-t border-purple-600 text-center py-4 text-sm">
-        © Copyright 2025 Lucas Calvo Coltro, Todos los derechos reservados.
+        © Copyright 2025 - Lucas Calvo Coltro - Todos los derechos reservados.
       </div>
     </footer>
   );

@@ -1,218 +1,158 @@
 "use client";
-import React from "react";
-import { FaCircleInfo } from "react-icons/fa6";
-import {
-  BsWindowDock,
-  BsFileTextFill,
-  BsFillDiagram2Fill,
-  BsClipboardData,
-  BsDiagram2,
-  BsFileEarmarkText,
-  BsFileText,
-} from "react-icons/bs";
-import {
-  FaEnvelope,
-  FaPhone,
-  FaBirthdayCake,
-  FaLanguage,
-  FaMusic,
-  FaHeart,
-  FaBook,
-  FaGlobe,
-  FaLinkedin,
-  FaLaptopCode,
-  FaChartPie,
-} from "react-icons/fa";
-import {
-  SiPython,
-  SiNodedotjs,
-  SiReact,
-  SiMongodb,
-  SiHtml5,
-  SiCss3,
-  SiJavascript,
-  SiTailwindcss,
-  SiBootstrap,
-  SiNextdotjs,
-  SiExpress,
-  SiJquery,
-  SiPhp,
-  SiDotnet,
-  SiPostman,
-  SiLiquibase,
-  SiGitforwindows,
-  SiGit,
-  SiFirebase,
-  SiTypescript,
-  SiRedux,
-} from "react-icons/si";
+import { useState } from "react";
+import { BsArrowUpRight } from "react-icons/bs";
+import emailjs from "@emailjs/browser";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-export default function Services() {
+export default function Contact() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [formData, setFormData] = useState({
+    nombre: "",
+    email: "",
+    asunto: "",
+    mensaje: "",
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    emailjs
+      .send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        formData,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+      )
+      .then(
+        () => {
+          toast.success("Mensaje enviado correctamente!", {
+            style: { fontWeight: "bold", color: "black" },
+          });
+          setFormData({ nombre: "", email: "", asunto: "", mensaje: "" });
+          setIsModalOpen(false);
+        },
+        () => {
+          toast.error("Error al enviar el mensaje. Intenta de nuevo.", {
+            style: { fontWeight: "bold", color: "red" },
+          });
+        }
+      );
+  };
+
   return (
-    <section id="services" className="w-full px-6 py-16">
-      <div className="w-full max-w-[1440px] mx-auto flex flex-col items-center gap-6">
-        {/* Botón */}
-        <button className="bg-purple-600 text-white px-4 py-2 text-sm rounded-full hover:bg-purple-700 transition flex items-center gap-2">
-          <FaLaptopCode size={16} /> SERVICIOS
-        </button>
-
-        <div className="mt-12 flex flex-col gap-8 w-full">
-          {/* Desarrollo Web FullStack */}
-          <div className="flex-1 bg-dark border border-white/20 p-6 rounded-xl shadow hover:shadow-lg transition flex flex-col">
-            <h3 className="text-2xl text-white font-bold mb-2">
-              Desarrollo Web FullStack
-            </h3>
-            <p className="text-sm text-gray-400 mb-4">
-              Desarrollo aplicaciones web modernas y funcionales, optimizadas
-              para usuarios y negocios. Me especializo en interfaces atractivas,
-              integraciones con APIs y soluciones escalables.
-            </p>
-            <div className="mt-6 flex flex-wrap gap-4 justify-center">
-              <div className="flex flex-col items-center gap-1 text-blue-500">
-                <SiNodedotjs className="text-4xl" />
-                <span className="text-sm">Node.js</span>
-              </div>
-              <div className="flex flex-col items-center gap-1 text-blue-500">
-                <SiPython className="text-4xl" />
-                <span className="text-sm">Python</span>
-              </div>
-              <div className="flex flex-col items-center gap-1 text-blue-500">
-                <SiReact className="text-4xl" />
-                <span className="text-sm">React</span>
-              </div>
-              <div className="flex flex-col items-center gap-1 text-blue-500">
-                <SiMongodb className="text-4xl" />
-                <span className="text-sm">MongoDB</span>
-              </div>
-              <div className="flex flex-col items-center gap-1 text-blue-500">
-                <SiHtml5 className="text-4xl" />
-                <span className="text-sm">HTML5</span>
-              </div>
-              <div className="flex flex-col items-center gap-1 text-blue-500">
-                <SiCss3 className="text-4xl" />
-                <span className="text-sm">CSS3</span>
-              </div>
-              <div className="flex flex-col items-center gap-1 text-blue-500">
-                <SiJavascript className="text-4xl" />
-                <span className="text-sm">JavaScript</span>
-              </div>
-              <div className="flex flex-col items-center gap-1 text-blue-500">
-                <SiTailwindcss className="text-4xl" />
-                <span className="text-sm">Tailwind</span>
-              </div>
-              <div className="flex flex-col items-center gap-1 text-blue-500">
-                <SiBootstrap className="text-4xl" />
-                <span className="text-sm">Bootstrap</span>
-              </div>
-              <div className="flex flex-col items-center gap-1 text-blue-500">
-                <SiNextdotjs className="text-4xl" />
-                <span className="text-sm">Next.js</span>
-              </div>
-              <div className="flex flex-col items-center gap-1 text-blue-500">
-                <SiFirebase className="text-4xl" />
-                <span className="text-sm">FireBase</span>
-              </div>
-              <div className="flex flex-col items-center gap-1 text-blue-500">
-                <SiGit className="text-4xl" />
-                <span className="text-sm">Git</span>
-              </div>
-              <div className="flex flex-col items-center gap-1 text-blue-500">
-                <SiTypescript className="text-4xl" />
-                <span className="text-sm">TypeScript</span>
-              </div>
-              <div className="flex flex-col items-center gap-1 text-blue-500">
-                <SiRedux className="text-4xl" />
-                <span className="text-sm">Redux</span>
-              </div>
+    <>
+      {/* Sección principal */}
+      <section
+        id="contact"
+        className="w-full px-6 md:px-12 py-12 border-t-2 border-gray-300"
+      >
+        <div className="py-16 px-6">
+          <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10">
+            <div className="flex-1 text-left md:text-left">
+              <h2 className="text-2xl font-bold mb-8">
+                Tienes un proyecto en mente? Vamos a ponernos a trabajar.
+              </h2>
+              <button
+                onClick={() => setIsModalOpen(true)}
+                className="bg-purple-600 text-white px-4 py-4 text-xl hover:bg-purple-700 transition flex items-center gap-2 mt-4"
+              >
+                Cont&aacute;ctame <BsArrowUpRight />
+              </button>
             </div>
-          </div>
 
-          {/* Desarrollo Desktop Apps */}
-          <div className="flex-1 border  border-white/20 p-6 rounded-xl shadow hover:shadow-lg transition flex flex-col">
-            <h3 className="text-2xl text-white font-bold mb-2">
-              Desarrollo Desktop Apps
-            </h3>
-            <p className="text-sm text-gray-400 mb-4">
-              Experiencia con C#, .NET, WPF y Windows Forms para construir
-              aplicaciones de escritorio profesionales, robustas y fáciles de
-              usar.
-            </p>
-            <div className="mt-6 flex justify-center flex-wrap gap-4">
-              <div className="flex flex-col items-center gap-1 text-blue-500">
-                <SiDotnet className="text-4xl" />
-              </div>
-              <div className="flex flex-col items-center gap-1 text-blue-500">
-                <SiPostman className="text-4xl" />
-                <span className="text-sm">PostMan</span>
-              </div>
-              <div className="flex flex-col items-center gap-1 text-blue-500">
-                <SiLiquibase className="text-4xl" />
-                <span className="text-sm">Liquibase</span>
-              </div>
-              <div className="flex flex-col items-center gap-1 text-blue-500">
-                <img
-                  src="/sql-server.png"
-                  alt="SQL Server"
-                  className="w-15 h-15"
-                  style={{
-                    filter:
-                      "invert(30%) sepia(100%) saturate(500%) hue-rotate(180deg)",
-                  }}
-                />
-              </div>
-              <div className="flex flex-col items-center gap-1 text-blue-500">
-                <SiGitforwindows className="text-4xl" />
-                <span className="text-sm">Git</span>
-              </div>
-              <div className="flex flex-col items-center gap-1 text-blue-500">
-                <img
-                  src="/c-sharp.png"
-                  alt="C#"
-                  className="w-9 h-9"
-                  style={{
-                    filter:
-                      "invert(30%) sepia(100%) saturate(500%) hue-rotate(180deg)",
-                  }}
-                />
-                <span className="text-sm">C#</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Análisis Funcional */}
-          <div className="flex-1 border border-white/20 p-6 rounded-xl shadow hover:shadow-lg transition flex flex-col">
-            <h3 className="text-2xl text-white font-bold mb-2">
-              Análisis Funcional
-            </h3>
-            <p className="text-sm text-gray-400 mb-4">
-              Especializado en análisis funcional para el sector bancario,
-              identificando requerimientos, optimizando procesos y asegurando
-              que los sistemas cumplan con las necesidades del negocio.
-            </p>
-            <div className="mt-6 flex flex-wrap gap-4 justify-center">
-              <div className="flex flex-col items-center gap-1 text-blue-500">
-                <BsFileText className="text-4xl" />
-                <span className="text-sm">Reportes</span>
-              </div>
-
-              <div className="flex flex-col items-center gap-1 text-blue-500">
-                <BsFileEarmarkText className="text-4xl" />
-                <span className="text-sm">Documentación</span>
-              </div>
-
-              <div className="flex flex-col items-center gap-1 text-blue-500">
-                <BsDiagram2 className="text-4xl" />
-                <span className="text-sm">UML</span>
-              </div>
-
-              <div className="flex flex-col items-center gap-1 text-blue-500">
-                <BsClipboardData className="text-4xl" />
-                <span className="text-sm">Requerimientos</span>
-              </div>
+            <div className="flex-1 flex justify-center">
+              <img
+                src="/contact-cartoon.png"
+                alt="Project illustration"
+                className="rounded-lg shadow-lg w-full max-w-sm object-cover"
+              />
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* Modal */}
+      {isModalOpen && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50 p-4">
+          <div className="bg-white rounded-lg shadow-lg max-w-lg w-full p-6 relative">
+            <button
+              onClick={() => setIsModalOpen(false)}
+              className="absolute top-3 right-3 text-gray-500 hover:text-gray-700"
+            >
+              ✕
+            </button>
+
+            <h3 className="text-2xl text-black font-bold mb-2">
+              Tienes Ideas?
+            </h3>
+            <p className="text-gray-600 mb-6">
+              Trabajemos juntos. C&oacute;ntame más sobre vos y tus ideas.
+            </p>
+
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <input
+                type="text"
+                name="nombre"
+                placeholder="Nombre"
+                value={formData.nombre}
+                onChange={handleChange}
+                className="w-full border border-gray-300 text-black rounded-lg px-4 py-2 focus:ring-2 focus:ring-purple-500 outline-none"
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                value={formData.email}
+                onChange={handleChange}
+                className="w-full border border-gray-300 text-black rounded-lg px-4 py-2 focus:ring-2 focus:ring-purple-500 outline-none"
+              />
+              <input
+                type="text"
+                name="asunto"
+                placeholder="Asunto"
+                value={formData.asunto}
+                onChange={handleChange}
+                className="w-full border border-gray-300 text-black rounded-lg px-4 py-2 focus:ring-2 focus:ring-purple-500 outline-none"
+              />
+              <textarea
+                name="mensaje"
+                placeholder="Mensaje"
+                rows={4}
+                value={formData.mensaje}
+                onChange={handleChange}
+                className="w-full border border-gray-300 text-black rounded-lg px-4 py-2 focus:ring-2 focus:ring-purple-500 outline-none"
+              ></textarea>
+
+              <button
+                type="submit"
+                className="bg-purple-600 text-white px-6 py-2 rounded-lg shadow-md hover:bg-purple-700 transition w-full"
+              >
+                Enviar
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
+
+      {/* Toast Container */}
+      <ToastContainer
+        position="bottom-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
+    </>
   );
 }
