@@ -58,7 +58,7 @@ export default function Services() {
 
         <div className="mt-12 flex flex-col gap-8 w-full">
           {/* Desarrollo Web FullStack */}
-          <div className="flex-1 bg-dark border border-white/20 p-6 rounded-xl shadow hover:shadow-lg transition flex flex-col">
+          <div className="flex-1 border border-white/20 p-6 rounded-xl shadow hover:shadow-lg transition flex flex-col">
             <h3 className="text-2xl text-white font-bold mb-2">
               Desarrollo Web FullStack
             </h3>
