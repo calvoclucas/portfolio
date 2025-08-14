@@ -47,16 +47,28 @@ export default function Home() {
 
           <div className="flex flex-wrap mt-12 justify-between gap-6 mr-14 mb-12">
             <div className="flex-1">
-              <h3 className="text-xl font-bold text-purple-600">5+</h3>
-              <p className="text-black font-bold mt-1">Proyectos Personales</p>
+              <h3 className="text-xl lg:text-3xl font-bold text-purple-600">
+                5+
+              </h3>
+              <p className="text-black lg:text-xl font-bold mt-1">
+                Proyectos Personales
+              </p>
             </div>
             <div className="flex-1">
-              <h3 className="text-xl font-bold text-purple-600">8+</h3>
-              <p className="text-black font-bold mt-1">Años de Experiencia</p>
+              <h3 className="text-xl lg:text-3xl font-bold text-purple-600">
+                8+
+              </h3>
+              <p className="text-black lg:text-xl font-bold mt-1">
+                Años de Experiencia
+              </p>
             </div>
             <div className="flex-1">
-              <h3 className="text-xl font-bold text-purple-600">6+</h3>
-              <p className="text-black font-bold mt-1">Sitios Realizados</p>
+              <h3 className="text-xl lg:text-3xl font-bold text-purple-600">
+                6+
+              </h3>
+              <p className="text-black lg:text-xl font-bold mt-1">
+                Sitios Realizados
+              </p>
             </div>
           </div>
         </article>
