@@ -68,10 +68,10 @@ export default function Home() {
           <img
             src="/img_profile.png"
             alt="Lucas Calvo Coltro"
-            className="w-full h-full object-cover "
+            className="w-full h-full object-cover grayscale hover:grayscale-0 transition"
           />
           <div className="md:flex absolute inset-0 justify-center items-center px-4">
-            <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-center text-transparent uppercase bg-gradient-to-b from-white/70 to-white/10 bg-clip-text z-20">
+            <p className="text-3xl sm:text-4xl md:text-4xl lg:text-6xl font-extrabold text-center text-transparent uppercase bg-gradient-to-b from-white/70 to-white/10 bg-clip-text z-20 lg:mb-160 lg:-translate-y-20">
               Lucas Calvo Coltro
             </p>
           </div>

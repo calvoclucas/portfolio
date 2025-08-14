@@ -5,7 +5,9 @@ import {
   FaGraduationCap,
   FaCertificate,
   FaHistory,
+  FaLaptop,
 } from "react-icons/fa";
+import { PiStudent } from "react-icons/pi";
 
 interface TimelineItem {
   title: string;
@@ -160,18 +162,18 @@ export default function Experience() {
       id="experience"
       className="w-full bg-white px-6 md:px-12 py-12 border-t-2 border-gray-300"
     >
-      <div className="max-w-4xl mx-auto text-center">
+      <div className="max-w-4xl mx-auto text-center md:text-left">
         <button className="bg-purple-500 text-white px-4 py-2 text-sm rounded-full hover:bg-purple-700 transition flex items-center justify-center gap-2 mx-auto mb-6">
           <FaHistory size={16} /> Trayectoria
         </button>
 
         {/* Experiencia */}
         <h2 className="text-2xl md:text-4xl text-gray-800 font-bold mb-4 flex justify-center items-center gap-2">
-          <FaBriefcase /> Experiencia
+          <FaBriefcase className="text-3xl" /> Experiencia
         </h2>
         {renderTimeline(
           experience,
-          <FaBriefcase className="text-black" size={24} />
+          <FaLaptop className="text-black text-3xl" />
         )}
 
         {/* Educación */}
@@ -180,24 +182,33 @@ export default function Experience() {
         </h2>
         {renderTimeline(
           education,
-          <FaGraduationCap className="text-black" size={24} />
+          <PiStudent className="text-black text-3xl" />
         )}
 
         {/* Certificaciones */}
         <h2 className="text-2xl md:text-4xl text-gray-800 font-bold mt-12 mb-6 flex justify-center items-center gap-2">
           <FaCertificate /> Certificaciones
         </h2>
-        <div className="flex flex-col md:flex-row md:flex-wrap gap-4 justify-center">
+
+        <div className="flex flex-wrap justify-center gap-4">
           {certifications.map((cert, i) => (
-            <a
+            <div
               key={i}
-              href={cert.link}
-              target="_blank"
-              className="flex items-center gap-3 p-4 bg-purple-50 border border-purple-200 rounded-lg shadow-md hover:shadow-lg hover:bg-purple-100 transition w-full md:w-80"
+              className="flex flex-col items-center gap-3 p-4 bg-purple-50 border border-purple-200 rounded-lg shadow-md hover:shadow-lg hover:bg-purple-100 transition w-full lg:w-[48%]"
             >
-              <FaCertificate className="text-purple-600" size={24} />
-              <span className="text-gray-800 font-medium">{cert.title}</span>
-            </a>
+              <div className="flex text-1xl items-center gap-3">
+                <FaCertificate className="text-purple-600 " />
+                <span className="text-gray-800 font-medium">{cert.title}</span>
+              </div>
+              <a
+                href={cert.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-2 px-3 py-1 bg-purple-500 text-white text-sm font-semibold rounded hover:bg-purple-600 transition"
+              >
+                Ver Certificado
+              </a>
+            </div>
           ))}
         </div>
       </div>

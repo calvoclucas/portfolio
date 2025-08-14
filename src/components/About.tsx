@@ -5,11 +5,7 @@ import {
   FaEnvelope,
   FaPhone,
   FaBirthdayCake,
-  FaLanguage,
-  FaMusic,
   FaHeart,
-  FaBook,
-  FaGlobe,
   FaLinkedin,
   FaGithub,
 } from "react-icons/fa";
@@ -26,7 +22,7 @@ export default function About() {
           <FaCircleInfo size={16} /> Sobre M&iacute;
         </button>
 
-        <div className="w-full">
+        <div className="w-full lg:text-center">
           <h2 className="text-3xl text-black font-bold mb-4">
             Hola! Soy Lucas Calvo Coltro
           </h2>
@@ -38,7 +34,8 @@ export default function About() {
             y colaboro en equipos innovadores.
           </p>
 
-          <div className="mt-12 flex flex-col md:flex-row flex-wrap gap-8 text-gray-700">
+          {/* Datos */}
+          <div className="mt-12 flex flex-col md:flex-row flex-wrap gap-8 text-gray-700 lg:items-center lg:justify-center">
             {/* Contacto */}
             <div className="flex flex-col min-w-[200px]">
               <h3 className="font-semibold flex items-center gap-2 text-blue-400 mb-2">

@@ -19,7 +19,7 @@ export default function Navbar() {
   return (
     <nav className="bg-[rgb(5,12,23)] fixed top-0 left-0 right-0 z-50 px-6 flex justify-between items-center text-white ">
       {/* Logo */}
-      <div className="flex items-center">
+      <div className="flex items-center lg:ml-50 ">
         <Link href="/">
           <Image
             src="/logo_rbg.png"
@@ -43,7 +43,7 @@ export default function Navbar() {
 
       {/* Menú */}
       <ul
-        className={`flex-col md:flex-row text-lg md:flex md:space-x-8 absolute md:static top-16 left-0 w-full md:w-auto bg-[rgb(5,12,23)] transition-all duration-300 ease-in-out ${
+        className={`flex-col md:flex-row text-lg lg:mr-50 md:flex md:space-x-8 absolute md:static top-16 left-0 w-full md:w-auto bg-[rgb(5,12,23)] transition-all duration-300 ease-in-out ${
           isOpen ? "flex" : "hidden"
         }`}
       >

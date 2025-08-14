@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import { FaExternalLinkAlt, FaCode } from "react-icons/fa";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import WebPortfolio from "../images/web_portfolio.png";
 
 interface Project {
   title: string;
@@ -23,7 +24,7 @@ export default function Projects() {
   const projects: Project[] = [
     {
       title: "Portfolio Personal",
-      image: "/images/portfolio.png",
+      image: "/images/web_portfolio.png",
       link: "https://miportafolio.com",
       description:
         "Sitio web personal para mostrar mis trabajos y habilidades.",
