@@ -3,7 +3,6 @@ import React from "react";
 import {
   FaBriefcase,
   FaGraduationCap,
-  FaTools,
   FaCertificate,
   FaHistory,
 } from "react-icons/fa";
@@ -17,12 +16,29 @@ interface TimelineItem {
   projects?: string[];
 }
 
-export default function CV() {
+export default function Experience() {
   const experience: TimelineItem[] = [
+    {
+      title: "Analista Técnico Funcional .NET y Bantotal",
+      companyOrInstitution: "Banco Supervielle",
+      period: "Enero 2022 – Presente",
+      technologies: [
+        "Genexus (Java, RPG)",
+        "DB2",
+        ".NET",
+        "C#",
+        "Sql Server",
+        "Postman",
+      ],
+      description: [
+        "Módulos de Bantotal: Clearing, ECheq",
+        "Módulos de EClearing: Cámara Compensadora, Digitalización de Cheques",
+      ],
+    },
     {
       title: "Analista Técnico Bantotal",
       companyOrInstitution: "ACCION POINT S.A en Banco Supervielle",
-      period: "Julio 2020 – Presente",
+      period: "Julio 2020 – Abril 2021",
       technologies: ["Genexus (Java, RPG)", "DB2"],
       description: [
         "Módulos de Bantotal: Clientes, Plazos Fijos, Núcleo, Contabilidad.",
@@ -72,16 +88,11 @@ export default function CV() {
     },
   ];
 
-  const skills = [
-    "C++, C, C#, JavaScript, HTML5, CSS3, PHP, MySQL, JQUERY, AJAX, BOOTSTRAP, Genexus, JSON, API REST, SOAP UI, XML, SQL SERVER, NODE JS, ANGULAR, MONGO DB",
-  ];
-
   const certifications = [
     {
       title: "Master en JavaScript: Aprender JS, jQuery, Angular, NodeJS",
       link: "https://www.udemy.com/certificate/UC-c57bbf0e-55fb-4727-b87f-6fdb6f04592b/",
     },
-
     {
       title: "API/REST con .NET + Swagger + SQL Server",
       link: "https://udemy-certificate.s3.amazonaws.com/pdf/UC-ae826f8e-9e67-4775-a545-9e54ad747d3a.pdf",
@@ -101,54 +112,59 @@ export default function CV() {
   ];
 
   const renderTimeline = (items: TimelineItem[], icon: React.ReactNode) =>
-    items.map((item, index) => (
-      <div
-        key={index}
-        className="mb-8 flex flex-col items-center text-center relative"
-      >
-        {index < items.length - 1 && (
-          <div className="absolute left-1/2 -translate-x-1/2 top-10 h-full w-[2px] bg-purple-600 z-0"></div>
-        )}
-        <div className="z-10 flex flex-col items-center bg-white p-4 rounded-md shadow-md w-full">
-          <div className="mb-2">{icon}</div>
-          <span className="text-yellow-500 font-bold">{item.period}</span>
-          <h3 className="text-lg font-semibold text-black mt-1">
-            {item.title}
-          </h3>
-          {item.companyOrInstitution && (
-            <p className="text-gray-800 italic mt-1">
-              {item.companyOrInstitution}
-            </p>
-          )}
-          {item.description &&
-            item.description.map((desc, i) => (
-              <p key={i} className="text-gray-600 mt-1">
-                {desc}
+    items.map((item, index) => {
+      const isLeft = index % 2 === 0;
+      return (
+        <div key={index} className="relative w-full flex justify-center mb-12">
+          {/* Línea central */}
+          <div className="absolute left-1/2 top-0 h-full w-[2px] bg-purple-600 z-0"></div>
+
+          <div
+            className={`z-10 w-full md:w-1/2 p-4 bg-white rounded-md shadow-md ${
+              isLeft ? "md:mr-auto md:text-left" : "md:ml-auto md:text-right"
+            }`}
+          >
+            <div className="mb-2">{icon}</div>
+            <span className="text-yellow-500 font-bold">{item.period}</span>
+            <h3 className="text-lg font-semibold text-black mt-1">
+              {item.title}
+            </h3>
+            {item.companyOrInstitution && (
+              <p className="text-gray-800 italic mt-1">
+                {item.companyOrInstitution}
               </p>
-            ))}
-          {item.technologies && (
-            <p className="text-gray-600 mt-1">
-              <strong>Tecnologías:</strong> {item.technologies.join(", ")}
-            </p>
-          )}
-          {item.projects && (
-            <p className="text-gray-600 mt-1">
-              <strong>Proyectos:</strong> {item.projects.join(", ")}
-            </p>
-          )}
+            )}
+            {item.description &&
+              item.description.map((desc, i) => (
+                <p key={i} className="text-gray-600 mt-1">
+                  {desc}
+                </p>
+              ))}
+            {item.technologies && (
+              <p className="text-gray-600 mt-1">
+                <strong>Tecnologías:</strong> {item.technologies.join(", ")}
+              </p>
+            )}
+            {item.projects && (
+              <p className="text-gray-600 mt-1">
+                <strong>Proyectos:</strong> {item.projects.join(", ")}
+              </p>
+            )}
+          </div>
         </div>
-      </div>
-    ));
+      );
+    });
 
   return (
     <section
       id="experience"
       className="w-full bg-white px-6 md:px-12 py-12 border-t-2 border-gray-300"
     >
-      <div className="max-w-3xl mx-auto text-center">
+      <div className="max-w-4xl mx-auto text-center">
         <button className="bg-purple-500 text-white px-4 py-2 text-sm rounded-full hover:bg-purple-700 transition flex items-center justify-center gap-2 mx-auto mb-6">
           <FaHistory size={16} /> Trayectoria
         </button>
+
         {/* Experiencia */}
         <h2 className="text-2xl md:text-4xl text-gray-800 font-bold mb-4 flex justify-center items-center gap-2">
           <FaBriefcase /> Experiencia
@@ -159,7 +175,7 @@ export default function CV() {
         )}
 
         {/* Educación */}
-        <h2 className="text-2xl text-gray-800 md:text-4xl font-bold mt-12 mb-4 flex justify-center items-center gap-2">
+        <h2 className="text-2xl md:text-4xl text-gray-800 font-bold mt-12 mb-4 flex justify-center items-center gap-2">
           <FaGraduationCap /> Educación
         </h2>
         {renderTimeline(
@@ -171,7 +187,6 @@ export default function CV() {
         <h2 className="text-2xl md:text-4xl text-gray-800 font-bold mt-12 mb-6 flex justify-center items-center gap-2">
           <FaCertificate /> Certificaciones
         </h2>
-
         <div className="flex flex-col md:flex-row md:flex-wrap gap-4 justify-center">
           {certifications.map((cert, i) => (
             <a
