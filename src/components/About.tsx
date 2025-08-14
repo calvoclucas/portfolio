@@ -38,21 +38,23 @@ export default function About() {
             y colaboro en equipos innovadores.
           </p>
 
-          <div className="mt-12 flex flex-wrap text-gray-700 gap-8">
-            <div className="flex flex-col">
-              <h3 className="font-semibold flex items-center gap-2 text-blue-400 mt-2 mb-2">
+          <div className="mt-12 flex flex-col md:flex-row flex-wrap gap-8 text-gray-700">
+            {/* Contacto */}
+            <div className="flex flex-col min-w-[200px]">
+              <h3 className="font-semibold flex items-center gap-2 text-blue-400 mb-2">
                 <FaEnvelope /> Contacto
               </h3>
               <a
                 href="mailto:calvoclucas@gmail.com"
-                className="font-bold hover:text-blue-500"
+                className="font-bold hover:text-blue-500 break-all"
               >
                 calvoclucas@gmail.com
               </a>
             </div>
 
-            <div className="flex flex-col">
-              <h3 className="font-semibold flex items-center gap-2 text-blue-400 mt-2 mb-2">
+            {/* Teléfono */}
+            <div className="flex flex-col min-w-[200px]">
+              <h3 className="font-semibold flex items-center gap-2 text-blue-400 mb-2">
                 <FaPhone /> Teléfono
               </h3>
               <a
@@ -63,31 +65,25 @@ export default function About() {
               </a>
             </div>
 
-            <div className="flex flex-col">
-              <h3 className="font-semibold flex items-center gap-2 text-blue-400 mt-2 mb-2">
+            {/* Cumpleaños */}
+            <div className="flex flex-col min-w-[200px]">
+              <h3 className="font-semibold flex items-center gap-2 text-blue-400 mb-2">
                 <FaBirthdayCake /> Fecha de Cumpleaños
               </h3>
               <p className="font-bold">Enero 28, 1998</p>
             </div>
 
-            <div className="flex flex-col">
-              <h3 className="font-semibold flex items-center gap-2 text-blue-400 mt-2 mb-2">
-                <FaLanguage /> Idiomas Hablados
+            {/* Intereses */}
+            <div className="flex flex-col min-w-[200px]">
+              <h3 className="font-semibold flex items-center gap-2 text-blue-400 mb-2">
+                <FaHeart /> Intereses Personales
               </h3>
-              <p className="font-bold">Espa&ntilde;ol - Franc&eacute;s</p>
+              <p className="font-bold">Programación, Fútbol, Música</p>
             </div>
 
-            <div className="flex flex-col">
-              <h3 className="font-semibold flex items-center gap-2 text-blue-400 mt-2 mb-2">
-                <FaHeart /> Intereses
-              </h3>
-              <p className="font-bold">
-                Programaci&oacute;n, F&uacute;tbol, M&uacute;sica
-              </p>
-            </div>
-
-            <div className="flex flex-col">
-              <h3 className="font-semibold flex items-center gap-2 text-blue-400 mt-2 mb-2">
+            {/* Redes Sociales */}
+            <div className="flex flex-col min-w-[200px]">
+              <h3 className="font-semibold text-blue-400 mb-2">
                 Redes Sociales
               </h3>
               <div className="flex gap-4 mt-1 text-xl">

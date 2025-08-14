@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import Home from "../components/Home";
 import About from "@/components/About";
 import Services from "@/components/Services";
+import Footer from "@/components/Footer";
 
 export const metadata = {
   title: "Portfolio - Lucas Calvo Coltro",
@@ -28,6 +29,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <Home />
         <About />
         <Services />
+        <Footer />
         <main className="pt-20">{children}</main>
       </body>
     </html>
