@@ -12,6 +12,7 @@ import Projects from "@/components/Projects";
 export const metadata = {
   title: "Portfolio - Lucas Calvo Coltro",
   description: "Portfolio de Lucas Calvo Coltro",
+  viewport: "width=device-width, initial-scale=1",
 };
 
 type RootLayoutProps = {
