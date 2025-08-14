@@ -20,10 +20,10 @@ export default function About() {
       id="about"
       className="w-full bg-white px-6 md:px-12 py-16 border-t-2 border-gray-300"
     >
-      <div className="w-full max-w-[1440px] mx-auto flex flex-col items-start gap-6">
+      <div className="w-full max-w-[1440px] mx-auto flex flex-col items-center gap-6">
         {/* Botón */}
-        <button className="bg-purple-600 text-white px-4 py-2 text-sm rounded-full hover:bg-purple-700 transition flex items-center gap-2">
-          <FaCircleInfo size={16} /> SOBRE M&Iacute;
+        <button className="bg-purple-500 text-white px-4 py-2 text-sm rounded-full hover:bg-purple-700 transition flex items-center gap-2">
+          <FaCircleInfo size={16} /> Sobre M&iacute;
         </button>
 
         <div className="w-full">

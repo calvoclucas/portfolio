@@ -1,6 +1,10 @@
 "use client";
 import React from "react";
 import { FaCircleInfo } from "react-icons/fa6";
+import "aos/dist/aos.css"; // estilos de AOS
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css"; // estilos de AOS
 import {
   BsWindowDock,
   BsFileTextFill,
@@ -48,12 +52,22 @@ import {
 } from "react-icons/si";
 
 export default function Services() {
+  useEffect(() => {
+    AOS.init({
+      duration: 800, // duración de la animación en ms
+      once: true, // animar solo la primera vez
+    });
+  }, []);
+
   return (
     <section id="services" className="w-full px-6 py-16">
-      <div className="w-full max-w-[1440px] mx-auto flex flex-col items-center gap-6">
+      <div
+        className="w-full max-w-[1440px] mx-auto flex flex-col items-center gap-6"
+        data-aos="fade-up"
+      >
         {/* Botón */}
-        <button className="bg-purple-600 text-white px-4 py-2 text-sm rounded-full hover:bg-purple-700 transition flex items-center gap-2">
-          <FaLaptopCode size={16} /> SERVICIOS
+        <button className="bg-purple-500 text-white px-4 py-2 text-sm rounded-full hover:bg-purple-700 transition flex items-center gap-2">
+          <FaLaptopCode size={16} /> Servicios
         </button>
 
         <div className="mt-12 flex flex-col gap-8 w-full">
