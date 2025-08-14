@@ -1,13 +1,13 @@
 "use client";
 import React, { useEffect } from "react";
+import Image from "next/image";
 import { FaExternalLinkAlt, FaCode } from "react-icons/fa";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import WebPortfolio from "../images/web_portfolio.png";
 
 interface Project {
   title: string;
-  image: string;
+  image: string; // ahora es string
   link: string;
   description: string;
   technologies: string[];
@@ -15,34 +15,41 @@ interface Project {
 
 export default function Projects() {
   useEffect(() => {
-    AOS.init({
-      duration: 800,
-      once: true,
-    });
+    AOS.init({ duration: 800, once: true });
   }, []);
 
   const projects: Project[] = [
     {
       title: "Portfolio Personal",
       image: "/images/web_portfolio.png",
-      link: "https://miportafolio.com",
+      link: "https://portfolio-six-red-72.vercel.app/",
       description:
         "Sitio web personal para mostrar mis trabajos y habilidades.",
       technologies: ["Next.js", "Tailwind CSS", "TypeScript"],
     },
     {
-      title: "Ecommerce Demo",
-      image: "/images/ecommerce.png",
-      link: "https://myecommerce.com",
-      description: "Tienda online con carrito y pasarela de pagos.",
-      technologies: ["React", "Node.js", "MongoDB"],
+      title: "Transporte Scropranich",
+      image: "/images/web_transcrop.png",
+      link: "https://transportescropanich.com/",
+      description:
+        "Transporte Scropranich - Cargas Generales - Servicio Directo a Capital Federal - C.A.B.A / Vedia",
+      technologies: ["HTML", "CSS", "Bootstrap", "JavaScript"],
     },
     {
-      title: "App de Gestión",
-      image: "/images/gestion.png",
-      link: "https://appgestion.com",
-      description: "Sistema web para gestionar inventario y ventas.",
-      technologies: ["Angular", "Firebase"],
+      title: "Jar Solutions",
+      image: "/images/web_jars.png",
+      link: "https://jarsolutionssrl.com/",
+      description:
+        "Jarsolutions es una empresa de ingeniería con una fuerte vocación en la provisión de soluciones, productos y servicios en el área de sistemas.",
+      technologies: ["PHP", "JavaScript", "CSS", "Bootstrap", "jQuery"],
+    },
+    {
+      title: "GSN Mutual",
+      image: "/images/web_mutual.png",
+      link: "https://www.gruposannicolas.com.ar/",
+      description:
+        "Jarsolutions es una empresa de ingeniería con una fuerte vocación en la provisión de soluciones, productos y servicios en el área de sistemas.",
+      technologies: ["PHP", "JavaScript", "CSS", "Bootstrap", "jQuery", "PHP"],
     },
   ];
 
@@ -70,32 +77,35 @@ export default function Projects() {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden hover:shadow-xl transition w-full sm:w-[45%] lg:w-[30%]"
+              className="bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden hover:shadow-xl transition w-full sm:w-[45%] lg:w-[30%] justify-center"
               data-aos="fade-up"
               data-aos-delay={index * 200}
             >
-              <img
+              <Image
                 src={project.image}
                 alt={project.title}
                 className="w-full h-48 object-cover"
+                width={500}
+                height={200}
               />
               <div className="p-4 flex flex-col h-full">
-                <h3 className="text-lg font-bold text-gray-800">
+                <h3 className="text-lg font-bold text-purple-500">
                   {project.title}
                 </h3>
-                <p className="text-gray-600 text-sm mt-2 flex-grow">
+                <p className="text-gray-600 text-sm mt-2">
                   {project.description}
                 </p>
-                <p className="text-gray-500 text-xs mt-2">
+                <p className="text-black text-gray-900 text-xs mt-12">
                   <strong>Tecnologías:</strong>{" "}
                   {project.technologies.join(", ")}
                 </p>
                 <a
                   href={project.link}
                   target="_blank"
-                  className="mt-4 inline-flex items-center gap-2 text-purple-600 hover:text-purple-800 font-semibold transition"
+                  rel="noopener noreferrer"
+                  className="mt-12 inline-flex items-center gap-2 text-purple-600 hover:text-purple-800 font-semibold transition justify-center"
                 >
-                  Ver Proyecto <FaExternalLinkAlt size={14} />
+                  Ir <FaExternalLinkAlt size={14} />
                 </a>
               </div>
             </div>

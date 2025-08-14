@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import {
   FaBriefcase,
   FaGraduationCap,
@@ -8,6 +8,8 @@ import {
   FaLaptop,
 } from "react-icons/fa";
 import { PiStudent } from "react-icons/pi";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 interface TimelineItem {
   title: string;
@@ -19,6 +21,10 @@ interface TimelineItem {
 }
 
 export default function Experience() {
+  useEffect(() => {
+    AOS.init({ duration: 800, once: true });
+  }, []);
+
   const experience: TimelineItem[] = [
     {
       title: "Analista Técnico Funcional .NET y Bantotal",
@@ -162,13 +168,16 @@ export default function Experience() {
       id="experience"
       className="w-full bg-white px-6 md:px-12 py-12 border-t-2 border-gray-300"
     >
-      <div className="max-w-4xl mx-auto text-center md:text-left">
+      <div
+        className="max-w-4xl mx-auto text-center md:text-left"
+        data-aos="fade-up"
+      >
         <button className="bg-purple-500 text-white px-4 py-2 text-sm rounded-full hover:bg-purple-700 transition flex items-center justify-center gap-2 mx-auto mb-6">
           <FaHistory size={16} /> Trayectoria
         </button>
 
         {/* Experiencia */}
-        <h2 className="text-2xl md:text-4xl text-gray-800 font-bold mb-4 flex justify-center items-center gap-2">
+        <h2 className="text-2xl md:text-4xl text-gray-800 font-bold mt-20 mb-20 flex justify-center items-center gap-2">
           <FaBriefcase className="text-3xl" /> Experiencia
         </h2>
         {renderTimeline(
@@ -177,7 +186,7 @@ export default function Experience() {
         )}
 
         {/* Educación */}
-        <h2 className="text-2xl md:text-4xl text-gray-800 font-bold mt-12 mb-4 flex justify-center items-center gap-2">
+        <h2 className="text-2xl md:text-4xl text-gray-800 font-bold mt-20 mb-20 flex justify-center items-center gap-2">
           <FaGraduationCap /> Educación
         </h2>
         {renderTimeline(
@@ -186,7 +195,7 @@ export default function Experience() {
         )}
 
         {/* Certificaciones */}
-        <h2 className="text-2xl md:text-4xl text-gray-800 font-bold mt-12 mb-6 flex justify-center items-center gap-2">
+        <h2 className="text-2xl md:text-4xl text-gray-800 font-bold mt-20 mb-20 flex flex-wrap justify-center items-center gap-2">
           <FaCertificate /> Certificaciones
         </h2>
 
