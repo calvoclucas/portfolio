@@ -17,20 +17,22 @@ type RootLayoutProps = {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="es">
+    <html lang="es" className="h-full">
       <head>
         <link
           href="https://fonts.googleapis.com/css2?family=Sora&display=swap"
           rel="stylesheet"
         />
       </head>
-      <body>
+      <body className="flex flex-col min-h-screen">
         <Navbar />
-        <Home />
-        <About />
-        <Services />
+        <main className="flex-grow">
+          <Home />
+          <About />
+          <Services />
+          {children}
+        </main>
         <Footer />
-        <main className="pt-20">{children}</main>
       </body>
     </html>
   );
