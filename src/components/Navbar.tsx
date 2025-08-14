@@ -15,46 +15,55 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="bg-[rgb(5,12,23)] fixed top-0 left-0 right-0 z-50 px-6 py-2 flex justify-between items-center text-white">
+    <nav className="bg-[rgb(5,12,23)] fixed top-0 left-0 right-0 z-50 px-6 flex justify-between items-center text-white">
       {/* Logo */}
-      <div className="flex items-center ml-34">
+      <div className="flex items-center lg:ml-34">
         <Link href="/">
           <Image
-            src="/logo_dark.png"
+            src="/logo_rbg.png"
             alt="MiPortfolio Logo"
             width={160}
             height={60}
-            className="cursor-pointer"
+            className="cursor-pointer 
+               w-50 h-30       /* mobile */
+               sm:w-50 sm:h-30 /* tablets */
+               md:w-50 md:h-30 /* laptops */
+               lg:w-100 lg:h-50 /* desktop grande */
+              "
+            style={{ filter: "invert(100%) brightness(200%)" }}
           />
         </Link>
       </div>
 
       {/* Botón menú móvil */}
+      {/* Botón menú móvil */}
+      {/* Botón menú móvil */}
+      {/* Botón menú móvil */}
       <button
-        className="md:hidden flex items-center px-3 py-2 border rounded text-white border-white hover:text-gray-300 hover:border-gray-300"
+        className="md:hidden flex flex-col justify-between w-8 h-6 p-1 cursor-pointer"
         onClick={() => setIsOpen(!isOpen)}
         aria-label="Toggle menu"
       >
-        <svg
-          className="fill-current h-6 w-6"
-          viewBox="0 0 20 20"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          {isOpen ? (
-            <path
-              fillRule="evenodd"
-              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-              clipRule="evenodd"
-            />
-          ) : (
-            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-          )}
-        </svg>
+        <span
+          className={`block h-1 bg-white rounded transform transition-all duration-300 origin-top-right ${
+            isOpen ? "rotate-45 w-5 translate-y-1" : "w-full"
+          }`}
+        ></span>
+        <span
+          className={`block h-1 bg-white rounded transform transition-all duration-300 ${
+            isOpen ? "opacity-0" : "w-4/5 self-end"
+          }`}
+        ></span>
+        <span
+          className={`block h-1 bg-white rounded transform transition-all duration-300 origin-bottom-right ${
+            isOpen ? "-rotate-45 w-5 -translate-y-1" : "w-3/5 self-end"
+          }`}
+        ></span>
       </button>
 
       {/* Menú */}
       <ul
-        className={`flex-col md:flex-row md:flex md:space-x-8 absolute md:static top-full left-0 w-full md:w-auto bg-dark transition-all duration-300 ease-in-out mr-34 ${
+        className={`flex-col md:flex-row text-lg md:flex md:space-x-8 absolute md:static top-full left-0 w-full md:w-auto bg-[rgb(5,12,23)] transition-all duration-300 ease-in-out mr-34 ${
           isOpen ? "flex" : "hidden"
         }`}
       >
@@ -65,7 +74,7 @@ export default function Navbar() {
           >
             <Link href={href}>
               <span
-                className="block font-bold text-lg md:text-base hover:text-gray-300 transition cursor-pointer"
+                className="block font-bold text-base md:text-sm hover:text-gray-300 transition cursor-pointer"
                 onClick={() => setIsOpen(false)}
               >
                 {label}
