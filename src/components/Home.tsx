@@ -13,7 +13,7 @@ export default function Home() {
       <div className="w-full flex flex-col md:flex-row max-w-[1440px] mx-auto h-full">
         {/* Texto - 1/2 ancho */}
         <article className="w-full md:w-1/2 flex flex-col justify-center h-full z-10 relative">
-          <p className="inline-block w-fit text-yellow-400 bg-[rgba(255,196,31,0.14)] font-semibold text-lg p-2.5 rounded mb-12 mt-12">
+          <p className="inline-block w-fit text-yellow-400 bg-[rgba(255,196,31,0.14)] font-semibold text-lg p-2.5 mb-12 mt-12">
             Hola! Soy Lucas Calvo Coltro
           </p>
 
@@ -43,24 +43,24 @@ export default function Home() {
             </a>
           </div>
 
-          <div className="flex flex-row justify-start gap-6 mt-12 mb-12 overflow-x-auto">
+          <div className="flex flex-row justify-center gap-6 mt-12 mb-12 flex-wrap">
             <div className="flex flex-col items-center flex-shrink-0">
-              <h3 className="text-2xl lg:text-3xl font-bold text-black">5+</h3>
-              <p className="inline-block whitespace-nowrap text-xs md:text-sm lg:text-base text-gray-400 mt-1">
+              <h3 className="text-3xl lg:text-4xl font-bold text-black">5+</h3>
+              <p className="text-base md:text-sm lg:text-base text-gray-400 mt-1">
                 Proyectos Personales
               </p>
             </div>
 
             <div className="flex flex-col items-center flex-shrink-0">
-              <h3 className="text-2xl lg:text-3xl font-bold text-black">8+</h3>
-              <p className="inline-block whitespace-nowrap text-xs md:text-sm lg:text-base text-gray-400 mt-1">
+              <h3 className="text-3xl lg:text-4xl font-bold text-black">8+</h3>
+              <p className="text-base md:text-sm lg:text-base text-gray-400 mt-1">
                 Años de Experiencia
               </p>
             </div>
 
             <div className="flex flex-col items-center flex-shrink-0">
-              <h3 className="text-2xl lg:text-3xl font-bold text-black">6+</h3>
-              <p className="inline-block whitespace-nowrap text-xs md:text-sm lg:text-base text-gray-400 mt-1">
+              <h3 className="text-3xl lg:text-4xl font-bold text-black">6+</h3>
+              <p className="text-base md:text-sm lg:text-base text-gray-400 mt-1">
                 Sitios Realizados
               </p>
             </div>
