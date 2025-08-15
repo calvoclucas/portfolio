@@ -18,7 +18,6 @@ export default function Navbar() {
 
   return (
     <nav className="bg-[rgb(5,12,23)] fixed top-0 left-0 right-0 z-50 px-6 flex justify-between items-center text-white">
-      {/* Logo */}
       <div className="flex items-center lg:ml-20">
         <Link href="/">
           <Image
@@ -31,8 +30,6 @@ export default function Navbar() {
           />
         </Link>
       </div>
-
-      {/* Botón menú móvil */}
       <button
         className="lg:hidden text-white text-2xl"
         onClick={() => setIsOpen(!isOpen)}
@@ -40,12 +37,13 @@ export default function Navbar() {
       >
         {isOpen ? <FaTimes /> : <FaAlignRight />}
       </button>
-
-      {/* Menú */}
       <ul
-        className={`flex-col lg:flex-row text-lg lg:flex lg:space-x-8 absolute lg:mr-20 lg:static top-16 left-0 w-full lg:w-auto bg-[rgb(5,12,23)] transition-all duration-300 ease-in-out ${
-          isOpen ? "flex" : "hidden"
-        }`}
+        className={`flex-col lg:flex-row text-lg lg:flex lg:space-x-8 absolute lg:mr-20 lg:static top-16 left-0 w-full lg:w-auto bg-[rgb(5,12,23)] overflow-hidden transition-all duration-700 ease-in-out transform text-white
+    ${
+      isOpen
+        ? "flex opacity-100 scale-y-100"
+        : "flex opacity-0 scale-y-0 lg:opacity-100 lg:scale-y-100"
+    }`}
       >
         {menuItems.map(({ href, label }) => (
           <li

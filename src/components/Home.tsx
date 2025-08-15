@@ -1,7 +1,7 @@
 import Image from "next/image";
-import { FaDownload } from "react-icons/fa"; // Font Awesome
-import { MdWork } from "react-icons/md"; // Material Design
-import { FaRegUser } from "react-icons/fa"; // Font Awesome
+import { FaDownload } from "react-icons/fa";
+import { MdWork } from "react-icons/md";
+import { FaRegUser } from "react-icons/fa";
 import { MdLibraryBooks } from "react-icons/md";
 
 export default function Home() {
@@ -11,7 +11,6 @@ export default function Home() {
       className="w-full flex flex-col md:flex-row items-center min-h-screen px-6 md:px-12 bg-white mt-28"
     >
       <div className="w-full flex flex-col md:flex-row max-w-[1440px] mx-auto h-full">
-        {/* Texto - 1/2 ancho */}
         <article className="w-full md:w-1/2 flex flex-col justify-center h-full z-10 relative">
           <p className="inline-block w-fit text-yellow-400 bg-[rgba(255,196,31,0.14)] font-semibold text-lg p-2.5 mb-12 mt-12">
             Hola! Soy Lucas Calvo Coltro
@@ -43,7 +42,7 @@ export default function Home() {
             </a>
           </div>
 
-          <div className="flex flex-row justify-center gap-6 mt-12 mb-12 flex-wrap">
+          <div className="flex flex-row justify-center lg:justify-start gap-6 mt-12 mb-12 flex-wrap">
             <div className="flex flex-col items-center flex-shrink-0">
               <h3 className="text-3xl lg:text-4xl font-bold text-black">5+</h3>
               <p className="text-base md:text-sm lg:text-base text-gray-400 mt-1">

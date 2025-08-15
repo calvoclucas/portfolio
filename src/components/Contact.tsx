@@ -55,7 +55,6 @@ export default function Contact() {
 
   return (
     <>
-      {/* Sección principal */}
       <section
         id="contact"
         className="w-full px-6 md:px-12 py-12 border-t-2 border-gray-300"
@@ -87,8 +86,6 @@ export default function Contact() {
           </div>
         </div>
       </section>
-
-      {/* Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50 p-4">
           <div className="bg-white rounded-lg shadow-lg max-w-lg w-full p-6 relative">
@@ -151,7 +148,6 @@ export default function Contact() {
         </div>
       )}
 
-      {/* Toast Container */}
       <ToastContainer
         position="bottom-right"
         autoClose={3000}

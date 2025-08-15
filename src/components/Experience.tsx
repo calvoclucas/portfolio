@@ -10,7 +10,6 @@ import {
 import { PiStudent } from "react-icons/pi";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { GrCertificate } from "react-icons/gr";
 
 interface TimelineItem {
   title: string;
@@ -107,7 +106,6 @@ export default function Experience() {
           className="relative w-full flex justify-center mb-12"
           data-aos="fade-up"
         >
-          {/* Línea central */}
           <div className="absolute left-1/2 top-0 h-full w-[2px] bg-purple-600 z-0"></div>
 
           <div
@@ -116,13 +114,12 @@ export default function Experience() {
             }`}
             data-aos="fade-up"
           >
-            {/* Icono */}
             <div
               className={`flex mb-2 ${
                 isLeft
                   ? "justify-center md:justify-start"
                   : "justify-center md:justify-end"
-              } sm:justify-center`} // sm:justify-center centra en móviles
+              } sm:justify-center`}
             >
               <Icon className="text-black text-2xl md:text-3xl" />
             </div>
@@ -171,11 +168,9 @@ export default function Experience() {
         className="max-w-4xl mx-auto text-center md:text-left"
         data-aos="fade-up"
       >
-        <button className="bg-purple-500 text-white px-4 py-2 text-xs md:text-sm rounded-full hover:bg-purple-700 transition flex items-center justify-center gap-2 mx-auto mb-6">
+        <button className="bg-purple-500 text-white px-4 py-2 text-sm md:text-sm rounded-full hover:bg-purple-700 transition flex items-center justify-center gap-2 mx-auto">
           <FaHistory size={16} /> Trayectoria
         </button>
-
-        {/* Experiencia */}
         <h2
           data-aos="fade-up"
           className="text-2xl md:text-4xl text-gray-800 font-bold mt-20 mb-20 flex justify-center items-center gap-2"
@@ -183,8 +178,6 @@ export default function Experience() {
           <FaBriefcase className="text-3xl md:text-xl" /> Experiencia
         </h2>
         {renderTimeline(experience, FaLaptop)}
-
-        {/* Educación */}
         <h2
           data-aos="fade-up"
           className="text-2xl md:text-4xl text-gray-800 font-bold mt-20 mb-20 flex justify-center items-center gap-2"

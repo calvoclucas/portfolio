@@ -41,15 +41,12 @@ export default function Certifications() {
         className="max-w-4xl mx-auto text-center md:text-left"
         data-aos="fade-up"
       >
-        {/* Título */}
         <h2
           data-aos="fade-up"
           className="text-2xl md:text-4xl text-gray-800 font-bold mb-20 flex flex-wrap justify-center items-center gap-2"
         >
           <GrCertificate className="text-2xl md:text-3xl" /> Certificaciones
         </h2>
-
-        {/* Tarjetas de certificaciones */}
         <div className="flex flex-wrap justify-center gap-4" data-aos="fade-up">
           {certifications.map((cert, i) => (
             <div

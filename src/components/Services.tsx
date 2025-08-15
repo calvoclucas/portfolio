@@ -1,32 +1,16 @@
 "use client";
 import React from "react";
-import { FaCircleInfo } from "react-icons/fa6";
-import "aos/dist/aos.css"; // estilos de AOS
+import "aos/dist/aos.css";
 import { useEffect } from "react";
 import AOS from "aos";
-import "aos/dist/aos.css"; // estilos de AOS
+import "aos/dist/aos.css";
 import {
-  BsWindowDock,
-  BsFileTextFill,
-  BsFillDiagram2Fill,
   BsClipboardData,
   BsDiagram2,
   BsFileEarmarkText,
   BsFileText,
 } from "react-icons/bs";
-import {
-  FaEnvelope,
-  FaPhone,
-  FaBirthdayCake,
-  FaLanguage,
-  FaMusic,
-  FaHeart,
-  FaBook,
-  FaGlobe,
-  FaLinkedin,
-  FaLaptopCode,
-  FaChartPie,
-} from "react-icons/fa";
+import { FaLaptopCode } from "react-icons/fa";
 import {
   SiPython,
   SiNodedotjs,
@@ -54,8 +38,8 @@ import {
 export default function Services() {
   useEffect(() => {
     AOS.init({
-      duration: 800, // duración de la animación en ms
-      once: true, // animar solo la primera vez
+      duration: 800,
+      once: true,
     });
   }, []);
 
@@ -65,14 +49,13 @@ export default function Services() {
         className="w-full max-w-[1440px] mx-auto flex flex-col items-center gap-6"
         data-aos="fade-up"
       >
-        {/* Botón */}
         <button className="bg-purple-500 text-white px-4 py-2 text-sm rounded-full hover:bg-purple-700 transition flex items-center gap-2">
           <FaLaptopCode size={16} /> Servicios
         </button>
 
         <div className="mt-12 flex flex-col gap-8 w-full">
           {/* Desarrollo Web FullStack */}
-          <div className="flex-1 border lg:text-center border-white/20 p-6 rounded-xl shadow hover:shadow-lg transition flex flex-col max-w-6xl w-full mx-auto">
+          <div className="flex-1 border text-center border-white/20 p-6 rounded-xl shadow hover:shadow-lg transition flex flex-col max-w-6xl w-full mx-auto">
             <h3 className="text-2xl text-white font-bold mb-2">
               Desarrollo Web FullStack
             </h3>
@@ -138,11 +121,23 @@ export default function Services() {
                 <SiRedux className="text-4xl" />
                 <span className="text-sm">Redux</span>
               </div>
+              <div className="flex flex-col items-center gap-1 text-blue-500">
+                <SiExpress className="text-4xl" />
+                <span className="text-sm">Express</span>
+              </div>
+              <div className="flex flex-col items-center gap-1 text-blue-500">
+                <SiPhp className="text-4xl" />
+                <span className="text-sm">PHP</span>
+              </div>{" "}
+              <div className="flex flex-col items-center gap-1 text-blue-500">
+                <SiJquery className="text-4xl" />
+                <span className="text-sm">jQuery</span>
+              </div>
             </div>
           </div>
 
           {/* Desarrollo Desktop Apps */}
-          <div className="flex-1 border lg:text-center  border-white/20 p-6 rounded-xl shadow hover:shadow-lg transition flex flex-col max-w-6xl w-full mx-auto">
+          <div className="flex-1 border text-center  border-white/20 p-6 rounded-xl shadow hover:shadow-lg transition flex flex-col max-w-6xl w-full mx-auto">
             <h3 className="text-2xl lg:text-center text-white font-bold mb-2">
               Desarrollo Desktop Apps
             </h3>
@@ -194,7 +189,7 @@ export default function Services() {
           </div>
 
           {/* Análisis Funcional */}
-          <div className="flex-1 border lg:text-center border-white/20 p-6 rounded-xl shadow hover:shadow-lg transition flex flex-col max-w-6xl w-full mx-auto">
+          <div className="flex-1 border text-center border-white/20 p-6 rounded-xl shadow hover:shadow-lg transition flex flex-col max-w-6xl w-full mx-auto">
             <h3 className="text-2xl text-white font-bold mb-2">
               Análisis Funcional
             </h3>
