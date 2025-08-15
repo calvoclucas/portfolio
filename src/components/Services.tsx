@@ -38,7 +38,7 @@ import {
 export default function Services() {
   useEffect(() => {
     AOS.init({
-      duration: 800,
+      duration: 2000,
       once: true,
     });
   }, []);
@@ -48,6 +48,7 @@ export default function Services() {
       <div
         className="w-full max-w-[1440px] mx-auto flex flex-col items-center gap-6"
         data-aos="fade-up"
+        data-aos-easing="ease-in-out-sine"
       >
         <button className="bg-purple-500 text-white px-4 py-2 text-sm rounded-full hover:bg-purple-700 transition flex items-center gap-2">
           <FaLaptopCode size={16} /> Servicios

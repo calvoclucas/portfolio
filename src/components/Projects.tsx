@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { FaExternalLinkAlt, FaCode } from "react-icons/fa";
 import AOS from "aos";
@@ -7,15 +7,31 @@ import "aos/dist/aos.css";
 
 interface Project {
   title: string;
-  image: string; // ahora es string
+  image: string;
   link: string;
   description: string;
   technologies: string[];
 }
 
 export default function Projects() {
+  const [darkMode, setDarkMode] = useState(false);
+
   useEffect(() => {
-    AOS.init({ duration: 800, once: true });
+    AOS.init({ duration: 2000, once: true });
+
+    // Inicializar darkMode según la clase en html
+    setDarkMode(document.documentElement.classList.contains("dark"));
+
+    // Escuchar cambios en la clase del html
+    const observer = new MutationObserver(() => {
+      setDarkMode(document.documentElement.classList.contains("dark"));
+    });
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    return () => observer.disconnect();
   }, []);
 
   const projects: Project[] = [
@@ -48,7 +64,7 @@ export default function Projects() {
       image: "/images/web_mutual.png",
       link: "https://www.gruposannicolas.com.ar/",
       description:
-        "Jarsolutions es una empresa de ingeniería con una fuerte vocación en la provisión de soluciones, productos y servicios en el área de sistemas.",
+        "MUTUAL GSN nace con la intención y el compromiso de trabajar en el desarrollo de planes de Salud para que sus asociados puedan tener una cobertura de excelencia. Contamos también con una serie de servicios mutuales teniendo como premisa aportar valores, experiencias y apoyo al deporte, la educación y el cuidado del medio ambiente.",
       technologies: ["PHP", "JavaScript", "CSS", "Bootstrap", "jQuery", "PHP"],
     },
   ];
@@ -56,18 +72,23 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="w-full bg-white px-6 md:px-12 py-12 border-t-2 border-gray-300"
+      className={`w-full px-6 md:px-12 py-12 border-t-2 ${
+        darkMode ? "bg-gray-900 border-gray-700" : "bg-white border-gray-300"
+      }`}
     >
       <div className="max-w-5xl mx-auto text-center">
         <button
           className="bg-purple-500 text-white px-4 py-2 text-sm rounded-full hover:bg-purple-700 transition flex items-center justify-center gap-2 mx-auto mb-6"
           data-aos="fade-up"
+          data-aos-easing="ease-in-out-sine"
         >
           <FaCode size={16} /> Proyectos
         </button>
 
         <h2
-          className="text-2xl md:text-4xl text-gray-800 font-bold mb-8"
+          className={`text-2xl md:text-4xl font-bold mb-8 ${
+            darkMode ? "text-gray-100" : "text-gray-800"
+          }`}
           data-aos="fade-up"
         >
           Mis Proyectos
@@ -77,7 +98,11 @@ export default function Projects() {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden hover:shadow-xl transition w-full sm:w-[45%] lg:w-[30%] justify-center"
+              className={`border rounded-lg shadow-md overflow-hidden hover:shadow-xl transition w-full sm:w-[45%] lg:w-[30%] justify-center ${
+                darkMode
+                  ? "bg-gray-800 border-gray-700"
+                  : "bg-white border-gray-200"
+              }`}
               data-aos="fade-up"
               data-aos-delay={index * 200}
             >
@@ -92,10 +117,18 @@ export default function Projects() {
                 <h3 className="text-lg font-bold text-purple-500">
                   {project.title}
                 </h3>
-                <p className="text-gray-600 text-sm mt-2">
+                <p
+                  className={`text-sm mt-2 ${
+                    darkMode ? "text-gray-300" : "text-gray-600"
+                  }`}
+                >
                   {project.description}
                 </p>
-                <p className="text-black text-gray-900 text-xs mt-12">
+                <p
+                  className={`text-xs mt-12 ${
+                    darkMode ? "text-gray-100" : "text-black"
+                  }`}
+                >
                   <strong>Tecnologías:</strong>{" "}
                   {project.technologies.join(", ")}
                 </p>

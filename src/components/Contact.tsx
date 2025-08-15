@@ -65,7 +65,7 @@ export default function Contact() {
             data-aos="fade-up"
           >
             <div className="flex-1 text-left md:text-left">
-              <h2 className="text-2xl font-bold mb-8">
+              <h2 className="text-2xl lg:text-5xl font-bold mb-8">
                 Tienes un proyecto en mente? Vamos a ponernos a trabajar.
               </h2>
               <button

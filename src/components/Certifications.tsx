@@ -1,12 +1,28 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { GrCertificate } from "react-icons/gr";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 export default function Certifications() {
+  const [darkMode, setDarkMode] = useState(false);
+
   useEffect(() => {
-    AOS.init({ duration: 800, once: true });
+    AOS.init({ duration: 2000, once: true });
+
+    // Detectar modo dark
+    setDarkMode(document.documentElement.classList.contains("dark"));
+
+    const observer = new MutationObserver(() => {
+      setDarkMode(document.documentElement.classList.contains("dark"));
+    });
+
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    return () => observer.disconnect();
   }, []);
 
   const certifications = [
@@ -35,23 +51,36 @@ export default function Certifications() {
   return (
     <section
       id="certificate"
-      className="bg-yellow-50 w-full px-6 md:px-12 py-12 border-t-2 border-gray-300"
+      className={`w-full px-6 md:px-12 py-12 border-t-2 ${
+        darkMode ? "bg-gray-900" : "bg-yellow-50 border-gray-300"
+      }`}
     >
       <div
         className="max-w-4xl mx-auto text-center md:text-left"
         data-aos="fade-up"
+        data-aos-easing="ease-in-out-sine"
       >
         <h2
           data-aos="fade-up"
-          className="text-2xl md:text-4xl text-gray-800 font-bold mb-20 flex flex-wrap justify-center items-center gap-2"
+          data-aos-easing="ease-in-out-sine"
+          className={`text-2xl md:text-4xl font-bold mb-20 flex flex-wrap justify-center items-center gap-2 ${
+            darkMode ? "text-gray-100" : "text-gray-800"
+          }`}
         >
           <GrCertificate className="text-2xl md:text-3xl" /> Certificaciones
         </h2>
-        <div className="flex flex-wrap justify-center gap-4" data-aos="fade-up">
+
+        <div
+          className="flex flex-wrap justify-center gap-4"
+          data-aos="fade-up"
+          data-aos-easing="ease-in-out-sine"
+        >
           {certifications.map((cert, i) => (
             <div
               key={i}
               className="flex flex-col items-center gap-3 p-4 bg-yellow-100 border border-yellow-200 rounded-lg shadow-md hover:shadow-lg hover:bg-yellow-200 transition w-full lg:w-[48%]"
+              data-aos="fade-up"
+              data-aos-easing="ease-in-out-sine"
             >
               <GrCertificate
                 className="text-yellow-600 text-2xl md:text-3xl"

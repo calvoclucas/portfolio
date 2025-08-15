@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {
   FaBriefcase,
   FaGraduationCap,
@@ -21,8 +21,22 @@ interface TimelineItem {
 }
 
 export default function Experience() {
+  const [darkMode, setDarkMode] = useState(false);
+
   useEffect(() => {
-    AOS.init({ duration: 800, once: true });
+    AOS.init({ duration: 2000, once: true });
+
+    setDarkMode(document.documentElement.classList.contains("dark"));
+
+    const observer = new MutationObserver(() => {
+      setDarkMode(document.documentElement.classList.contains("dark"));
+    });
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    return () => observer.disconnect();
   }, []);
 
   const experience: TimelineItem[] = [
@@ -105,12 +119,15 @@ export default function Experience() {
           key={index}
           className="relative w-full flex justify-center mb-12"
           data-aos="fade-up"
+          data-aos-easing="ease-in-out-sine"
         >
           <div className="absolute left-1/2 top-0 h-full w-[2px] bg-purple-600 z-0"></div>
 
           <div
-            className={`z-10 w-full md:w-1/2 p-4 bg-white rounded-md shadow-md ${
+            className={`z-10 w-full md:w-1/2 p-4 rounded-md shadow-md ${
               isLeft ? "md:mr-auto md:text-left" : "md:ml-auto md:text-right"
+            } ${
+              darkMode ? "bg-gray-900 bg-opacity-80 text-white" : "bg-white"
             }`}
             data-aos="fade-up"
           >
@@ -121,17 +138,33 @@ export default function Experience() {
                   : "justify-center md:justify-end"
               } sm:justify-center`}
             >
-              <Icon className="text-black text-2xl md:text-3xl" />
+              <Icon
+                className={`${
+                  darkMode ? "text-white" : "text-black"
+                } text-2xl md:text-3xl`}
+              />
             </div>
 
-            <span className="text-yellow-500 font-bold text-sm md:text-base">
+            <span
+              className={`${
+                darkMode ? "text-yellow-400" : "text-yellow-500"
+              } font-bold text-sm md:text-base`}
+            >
               {item.period}
             </span>
-            <h3 className="text-base md:text-lg font-semibold text-black mt-1">
+            <h3
+              className={`${
+                darkMode ? "text-white" : "text-black"
+              } text-base md:text-lg font-semibold mt-1`}
+            >
               {item.title}
             </h3>
             {item.companyOrInstitution && (
-              <p className="text-gray-800 italic mt-1 text-sm md:text-base">
+              <p
+                className={`${
+                  darkMode ? "text-gray-300 italic" : "text-gray-800 italic"
+                } mt-1 text-sm md:text-base`}
+              >
                 {item.companyOrInstitution}
               </p>
             )}
@@ -139,18 +172,28 @@ export default function Experience() {
               item.description.map((desc, i) => (
                 <p
                   key={i}
-                  className="text-gray-600 mt-1 text-sm md:text-base leading-snug"
+                  className={`${
+                    darkMode ? "text-gray-300" : "text-gray-600"
+                  } mt-1 text-sm md:text-base leading-snug`}
                 >
                   {desc}
                 </p>
               ))}
             {item.technologies && (
-              <p className="text-gray-600 mt-1 text-sm md:text-base">
+              <p
+                className={`${
+                  darkMode ? "text-gray-300" : "text-gray-600"
+                } mt-1 text-sm md:text-base`}
+              >
                 <strong>Tecnologías:</strong> {item.technologies.join(", ")}
               </p>
             )}
             {item.projects && (
-              <p className="text-gray-600 mt-1 text-sm md:text-base">
+              <p
+                className={`${
+                  darkMode ? "text-gray-300" : "text-gray-600"
+                } mt-1 text-sm md:text-base`}
+              >
                 <strong>Proyectos:</strong> {item.projects.join(", ")}
               </p>
             )}
@@ -162,7 +205,11 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="bg-white w-full px-6 md:px-12 py-12 border-t-2 border-gray-300"
+      className={`w-full px-6 md:px-12 py-12 border-t-2 ${
+        darkMode
+          ? "bg-gray-900 bg-opacity-80 border-gray-700"
+          : "bg-white border-gray-300"
+      }`}
     >
       <div
         className="max-w-4xl mx-auto text-center md:text-left"
@@ -173,14 +220,18 @@ export default function Experience() {
         </button>
         <h2
           data-aos="fade-up"
-          className="text-2xl md:text-4xl text-gray-800 font-bold mt-20 mb-20 flex justify-center items-center gap-2"
+          className={`${
+            darkMode ? "text-white" : "text-gray-800"
+          } text-2xl md:text-4xl font-bold mt-20 mb-20 flex justify-center items-center gap-2`}
         >
           <FaBriefcase className="text-3xl md:text-xl" /> Experiencia
         </h2>
         {renderTimeline(experience, FaLaptop)}
         <h2
           data-aos="fade-up"
-          className="text-2xl md:text-4xl text-gray-800 font-bold mt-20 mb-20 flex justify-center items-center gap-2"
+          className={`${
+            darkMode ? "text-white" : "text-gray-800"
+          } text-2xl md:text-4xl font-bold mt-20 mb-20 flex justify-center items-center gap-2`}
         >
           <FaGraduationCap className="text-2xl md:text-3xl" /> Educación
         </h2>

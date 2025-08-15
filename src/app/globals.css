@@ -5,19 +5,29 @@
   --foreground: #171717;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: rgb(5 12 23);
-    --foreground: #ededed;
-  }
+:root {
+  --background: rgb(5, 12, 23);
+  --foreground: #ededed;
 }
 
 body {
   background-color: var(--background);
   color: var(--foreground);
-  font-family: 'Sora', sans-serif;
+  font-family: "Sora", sans-serif;
   margin: 0;
 }
+
 html {
+  scroll-padding-top: 80px;
   scroll-behavior: smooth;
+}
+
+[data-aos][data-aos-easing="ease-in-out-sine"],
+body[data-aos-easing="ease-in-out-sine"] [data-aos] {
+  transition-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+[data-aos][data-aos][data-aos-duration="2000"],
+body[data-aos-duration="2000"] [data-aos] {
+  transition-duration: 2s;
 }
