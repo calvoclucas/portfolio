@@ -10,6 +10,7 @@ import {
 import { PiStudent } from "react-icons/pi";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { GrCertificate } from "react-icons/gr";
 
 interface TimelineItem {
   title: string;
@@ -124,7 +125,11 @@ export default function Experience() {
       const isLeft = index % 2 === 0;
 
       return (
-        <div key={index} className="relative w-full flex justify-center mb-12">
+        <div
+          key={index}
+          className="relative w-full flex justify-center mb-12"
+          data-aos="fade-up"
+        >
           {/* Línea central */}
           <div className="absolute left-1/2 top-0 h-full w-[2px] bg-purple-600 z-0"></div>
 
@@ -132,6 +137,7 @@ export default function Experience() {
             className={`z-10 w-full md:w-1/2 p-4 bg-white rounded-md shadow-md ${
               isLeft ? "md:mr-auto md:text-left" : "md:ml-auto md:text-right"
             }`}
+            data-aos="fade-up"
           >
             {/* Icono */}
             <div
@@ -139,31 +145,36 @@ export default function Experience() {
                 isLeft ? "start" : "end"
               }`}
             >
-              <Icon className="text-black text-3xl" />
+              <Icon className="text-black text-2xl md:text-3xl" />
             </div>
 
-            <span className="text-yellow-500 font-bold">{item.period}</span>
-            <h3 className="text-lg font-semibold text-black mt-1">
+            <span className="text-yellow-500 font-bold text-sm md:text-base">
+              {item.period}
+            </span>
+            <h3 className="text-base md:text-lg font-semibold text-black mt-1">
               {item.title}
             </h3>
             {item.companyOrInstitution && (
-              <p className="text-gray-800 italic mt-1">
+              <p className="text-gray-800 italic mt-1 text-sm md:text-base">
                 {item.companyOrInstitution}
               </p>
             )}
             {item.description &&
               item.description.map((desc, i) => (
-                <p key={i} className="text-gray-600 mt-1">
+                <p
+                  key={i}
+                  className="text-gray-600 mt-1 text-sm md:text-base leading-snug"
+                >
                   {desc}
                 </p>
               ))}
             {item.technologies && (
-              <p className="text-gray-600 mt-1">
+              <p className="text-gray-600 mt-1 text-sm md:text-base">
                 <strong>Tecnologías:</strong> {item.technologies.join(", ")}
               </p>
             )}
             {item.projects && (
-              <p className="text-gray-600 mt-1">
+              <p className="text-gray-600 mt-1 text-sm md:text-base">
                 <strong>Proyectos:</strong> {item.projects.join(", ")}
               </p>
             )}
@@ -181,42 +192,55 @@ export default function Experience() {
         className="max-w-4xl mx-auto text-center md:text-left"
         data-aos="fade-up"
       >
-        <button className="bg-purple-500 text-white px-4 py-2 text-sm rounded-full hover:bg-purple-700 transition flex items-center justify-center gap-2 mx-auto mb-6">
+        <button className="bg-purple-500 text-white px-4 py-2 text-xs md:text-sm rounded-full hover:bg-purple-700 transition flex items-center justify-center gap-2 mx-auto mb-6">
           <FaHistory size={16} /> Trayectoria
         </button>
 
         {/* Experiencia */}
-        <h2 className="text-2xl md:text-4xl text-gray-800 font-bold mt-20 mb-20 flex justify-center items-center gap-2">
-          <FaBriefcase className="text-3xl" /> Experiencia
+        <h2
+          data-aos="fade-up"
+          className="text-xl md:text-4xl text-gray-800 font-bold mt-20 mb-20 flex justify-center items-center gap-2"
+        >
+          <FaBriefcase className="text-2xl md:text-3xl" /> Experiencia
         </h2>
         {renderTimeline(experience, FaLaptop)}
 
         {/* Educación */}
-        <h2 className="text-2xl md:text-4xl text-gray-800 font-bold mt-20 mb-20 flex justify-center items-center gap-2">
-          <FaGraduationCap /> Educación
+        <h2
+          data-aos="fade-up"
+          className="text-xl md:text-4xl text-gray-800 font-bold mt-20 mb-20 flex justify-center items-center gap-2"
+        >
+          <FaGraduationCap className="text-2xl md:text-3xl" /> Educación
         </h2>
         {renderTimeline(education, PiStudent)}
 
         {/* Certificaciones */}
-        <h2 className="text-2xl md:text-4xl text-gray-800 font-bold mt-20 mb-20 flex flex-wrap justify-center items-center gap-2">
-          <FaCertificate /> Certificaciones
+        <h2
+          data-aos="fade-up"
+          className="text-xl md:text-4xl text-gray-800 font-bold mt-20 mb-20 flex flex-wrap justify-center items-center gap-2"
+        >
+          <GrCertificate className="text-2xl md:text-3xl" /> Certificaciones
         </h2>
 
-        <div className="flex flex-wrap justify-center gap-4">
+        <div className="flex flex-wrap justify-center gap-4" data-aos="fade-up">
           {certifications.map((cert, i) => (
             <div
               key={i}
               className="flex flex-col items-center gap-3 p-4 bg-purple-50 border border-purple-200 rounded-lg shadow-md hover:shadow-lg hover:bg-purple-100 transition w-full lg:w-[48%]"
             >
-              <div className="flex text-1xl items-center gap-3">
-                <FaCertificate className="text-purple-600 " />
-                <span className="text-gray-800 font-medium">{cert.title}</span>
+              <div className="flex items-center gap-3">
+                <GrCertificate className="text-purple-600 text-lg md:text-xl" />
+              </div>
+              <div className="flex items-center gap-3">
+                <span className="text-gray-800 font-medium text-sm md:text-base text-center">
+                  {cert.title}
+                </span>
               </div>
               <a
                 href={cert.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-2 px-3 py-1 bg-purple-500 text-white text-sm font-semibold rounded hover:bg-purple-600 transition"
+                className="mt-2 px-3 py-1 bg-purple-500 text-white text-xs md:text-sm font-semibold rounded hover:bg-purple-600 transition"
               >
                 Ver Certificado
               </a>

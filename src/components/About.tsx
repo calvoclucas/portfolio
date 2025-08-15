@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { FaCircleInfo } from "react-icons/fa6";
 import {
   FaEnvelope,
@@ -13,12 +13,18 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 export default function About() {
+  useEffect(() => {
+    AOS.init({ duration: 800, once: true });
+  }, []);
   return (
     <section
       id="about"
       className="w-full bg-white px-6 md:px-12 py-16 border-t-2 border-gray-300"
     >
-      <div className="w-full max-w-[1440px] mx-auto flex flex-col items-center gap-6">
+      <div
+        className="w-full max-w-[1440px] mx-auto flex flex-col items-center gap-6"
+        data-aos="fade-up"
+      >
         {/* Botón */}
         <button className="bg-purple-500 text-white px-4 py-2 text-sm rounded-full hover:bg-purple-700 transition flex items-center gap-2">
           <FaCircleInfo size={16} /> Sobre M&iacute;
@@ -39,7 +45,7 @@ export default function About() {
           {/* Datos */}
           <div className="mt-12 flex flex-col md:flex-row flex-wrap gap-8 text-gray-700 lg:items-center lg:justify-center">
             {/* Contacto */}
-            <div className="flex flex-col min-w-[200px]">
+            <div className="flex flex-col min-w-[200px] lg:items-center">
               <h3 className="font-semibold flex items-center gap-2 text-blue-400 mb-2">
                 <FaEnvelope /> Contacto
               </h3>
@@ -52,7 +58,7 @@ export default function About() {
             </div>
 
             {/* Teléfono */}
-            <div className="flex flex-col min-w-[200px]">
+            <div className="flex flex-col min-w-[200px] lg:items-center">
               <h3 className="font-semibold flex items-center gap-2 text-blue-400 mb-2">
                 <FaPhone /> Teléfono
               </h3>
@@ -65,7 +71,7 @@ export default function About() {
             </div>
 
             {/* Cumpleaños */}
-            <div className="flex flex-col min-w-[200px]">
+            <div className="flex flex-col min-w-[200px] lg:items-center">
               <h3 className="font-semibold flex items-center gap-2 text-blue-400 mb-2">
                 <FaBirthdayCake /> Fecha de Cumpleaños
               </h3>
@@ -73,7 +79,7 @@ export default function About() {
             </div>
 
             {/* Intereses */}
-            <div className="flex flex-col min-w-[200px]">
+            <div className="flex flex-col min-w-[200px] lg:items-center">
               <h3 className="font-semibold flex items-center gap-2 text-blue-400 mb-2">
                 <FaHeart /> Intereses Personales
               </h3>
@@ -81,7 +87,7 @@ export default function About() {
             </div>
 
             {/* Redes Sociales */}
-            <div className="flex flex-col min-w-[200px]">
+            <div className="flex flex-col min-w-[200px] lg:items-center">
               <h3 className="font-semibold text-blue-400 mb-2">
                 Redes Sociales
               </h3>

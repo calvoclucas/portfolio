@@ -1,11 +1,18 @@
 "use client";
 import { useState } from "react";
+import React, { useEffect } from "react";
 import { BsArrowUpRight } from "react-icons/bs";
 import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function Contact() {
+  useEffect(() => {
+    AOS.init({ duration: 800, once: true });
+  }, []);
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [formData, setFormData] = useState({
     nombre: "",
@@ -54,7 +61,10 @@ export default function Contact() {
         className="w-full px-6 md:px-12 py-12 border-t-2 border-gray-300"
       >
         <div className="py-16 px-6">
-          <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10">
+          <div
+            className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10"
+            data-aos="fade-up"
+          >
             <div className="flex-1 text-left md:text-left">
               <h2 className="text-2xl font-bold mb-8">
                 Tienes un proyecto en mente? Vamos a ponernos a trabajar.
