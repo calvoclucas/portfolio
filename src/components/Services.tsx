@@ -54,7 +54,6 @@ export default function Services() {
         </button>
 
         <div className="mt-12 flex flex-col gap-8 w-full">
-          {/* Desarrollo Web FullStack */}
           <div className="flex-1 border text-center border-white/20 p-6 rounded-xl shadow hover:shadow-lg transition flex flex-col max-w-6xl w-full mx-auto">
             <h3 className="text-2xl text-white font-bold mb-2">
               Desarrollo Web FullStack
@@ -136,7 +135,6 @@ export default function Services() {
             </div>
           </div>
 
-          {/* Desarrollo Desktop Apps */}
           <div className="flex-1 border text-center  border-white/20 p-6 rounded-xl shadow hover:shadow-lg transition flex flex-col max-w-6xl w-full mx-auto">
             <h3 className="text-2xl lg:text-center text-white font-bold mb-2">
               Desarrollo Desktop Apps
@@ -188,7 +186,6 @@ export default function Services() {
             </div>
           </div>
 
-          {/* Análisis Funcional */}
           <div className="flex-1 border text-center border-white/20 p-6 rounded-xl shadow hover:shadow-lg transition flex flex-col max-w-6xl w-full mx-auto">
             <h3 className="text-2xl text-white font-bold mb-2">
               Análisis Funcional
