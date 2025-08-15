@@ -97,29 +97,6 @@ export default function Experience() {
     },
   ];
 
-  const certifications = [
-    {
-      title: "Master en JavaScript: Aprender JS, jQuery, Angular, NodeJS",
-      link: "https://www.udemy.com/certificate/UC-c57bbf0e-55fb-4727-b87f-6fdb6f04592b/",
-    },
-    {
-      title: "API/REST con .NET + Swagger + SQL Server",
-      link: "https://udemy-certificate.s3.amazonaws.com/pdf/UC-ae826f8e-9e67-4775-a545-9e54ad747d3a.pdf",
-    },
-    {
-      title: "C# nivel Básico a intermedio",
-      link: "https://ude.my/UC-78be4aea-1dee-4878-ba56-d73379855b79",
-    },
-    {
-      title: "Flutter: Tu guía completa de desarrollo para IOS y Android",
-      link: "https://www.udemy.com/certificate/UC-4bba7df0-cd8b-4320-aa8e-41047acdc753/",
-    },
-    {
-      title: "Scrum Fundamentals Certified (SFC)",
-      link: "https://www.scrumstudy.com/certification/verify?type=SFC&number=809801",
-    },
-  ];
-
   const renderTimeline = (items: TimelineItem[], Icon: React.ElementType) =>
     items.map((item, index) => {
       const isLeft = index % 2 === 0;
@@ -141,9 +118,11 @@ export default function Experience() {
           >
             {/* Icono */}
             <div
-              className={`flex mb-2 justify-center md:justify-${
-                isLeft ? "start" : "end"
-              }`}
+              className={`flex mb-2 ${
+                isLeft
+                  ? "justify-center md:justify-start"
+                  : "justify-center md:justify-end"
+              } sm:justify-center`} // sm:justify-center centra en móviles
             >
               <Icon className="text-black text-2xl md:text-3xl" />
             </div>
@@ -186,7 +165,7 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="w-full bg-white px-6 md:px-12 py-12 border-t-2 border-gray-300"
+      className="bg-white w-full px-6 md:px-12 py-12 border-t-2 border-gray-300"
     >
       <div
         className="max-w-4xl mx-auto text-center md:text-left"
@@ -199,54 +178,20 @@ export default function Experience() {
         {/* Experiencia */}
         <h2
           data-aos="fade-up"
-          className="text-xl md:text-4xl text-gray-800 font-bold mt-20 mb-20 flex justify-center items-center gap-2"
+          className="text-2xl md:text-4xl text-gray-800 font-bold mt-20 mb-20 flex justify-center items-center gap-2"
         >
-          <FaBriefcase className="text-2xl md:text-3xl" /> Experiencia
+          <FaBriefcase className="text-3xl md:text-xl" /> Experiencia
         </h2>
         {renderTimeline(experience, FaLaptop)}
 
         {/* Educación */}
         <h2
           data-aos="fade-up"
-          className="text-xl md:text-4xl text-gray-800 font-bold mt-20 mb-20 flex justify-center items-center gap-2"
+          className="text-2xl md:text-4xl text-gray-800 font-bold mt-20 mb-20 flex justify-center items-center gap-2"
         >
           <FaGraduationCap className="text-2xl md:text-3xl" /> Educación
         </h2>
         {renderTimeline(education, PiStudent)}
-
-        {/* Certificaciones */}
-        <h2
-          data-aos="fade-up"
-          className="text-xl md:text-4xl text-gray-800 font-bold mt-20 mb-20 flex flex-wrap justify-center items-center gap-2"
-        >
-          <GrCertificate className="text-2xl md:text-3xl" /> Certificaciones
-        </h2>
-
-        <div className="flex flex-wrap justify-center gap-4" data-aos="fade-up">
-          {certifications.map((cert, i) => (
-            <div
-              key={i}
-              className="flex flex-col items-center gap-3 p-4 bg-purple-50 border border-purple-200 rounded-lg shadow-md hover:shadow-lg hover:bg-purple-100 transition w-full lg:w-[48%]"
-            >
-              <div className="flex items-center gap-3">
-                <GrCertificate className="text-purple-600 text-lg md:text-xl" />
-              </div>
-              <div className="flex items-center gap-3">
-                <span className="text-gray-800 font-medium text-sm md:text-base text-center">
-                  {cert.title}
-                </span>
-              </div>
-              <a
-                href={cert.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-2 px-3 py-1 bg-purple-500 text-white text-xs md:text-sm font-semibold rounded hover:bg-purple-600 transition"
-              >
-                Ver Certificado
-              </a>
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );
