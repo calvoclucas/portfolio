@@ -31,10 +31,10 @@ export default function About() {
         </button>
 
         <div className="w-full lg:text-center">
-          <h2 className="text-3xl text-black font-bold mb-4">
+          <h2 className="md:text-2xl text-3xl text-black font-bold mb-4">
             Hola! Soy Lucas Calvo Coltro
           </h2>
-          <p className="text-gray-400 mb-4 mt-12">
+          <p className="text-base md:text-sm lg:text-base text-gray-400 mb-4 mt-12">
             Soy estudiante de Ingeniería en Sistemas y Técnico Universitario en
             Programación, con experiencia en desarrollo web. Me apasiona crear
             aplicaciones que faciliten la vida cotidiana, y busco seguir
